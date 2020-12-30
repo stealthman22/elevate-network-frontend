@@ -2,7 +2,7 @@ import './App.css';
 
 const App = () => (
   <div className="App">
-    APP
+    APP one
   </div>
 );
 
