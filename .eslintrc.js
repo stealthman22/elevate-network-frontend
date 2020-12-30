@@ -23,5 +23,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     indent: [2, 2, { SwitchCase: 1 }],
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
 };
