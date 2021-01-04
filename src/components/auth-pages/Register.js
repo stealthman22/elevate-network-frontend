@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import axios from 'axios';
 
 const Register = () => {
   // Create local state
@@ -19,13 +20,29 @@ const Register = () => {
   // e.target.name makes onchange available for all fields
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // create submit logic
-  const onSubmit = (e) => {
+  // create submit logic without  REDUX
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      console.log(formData);
+      const newUser = {
+        username, email, role, password, password2,
+      };
+      try {
+        //  make sending data to backend possible
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+
+        };
+        const body = JSON.stringify(newUser);
+        const res = await axios.post('/api/users', body, config);
+        console.log(res.data);
+      } catch (error) {
+        console.error(error.response.data);
+      }
     }
   };
 
@@ -63,17 +80,18 @@ const Register = () => {
           </small>
         </div>
         <div className="form-group">
-          <select
+          <input
+            type="text"
+            placeholder="mentee, mentor or partner"
             name="role"
             value={role}
             onChange={(e) => onChange(e)}
             required
             id="role"
-          >
-            <option value="mentee">Mentee</option>
-            <option value="mentor">Mentor</option>
-            <option value="partner">Partner</option>
-          </select>
+          />
+          <small className="form-text">
+            Please select how you want to be registered; mentee, mentor and partner
+          </small>
         </div>
         <div className="form-group">
           <input
