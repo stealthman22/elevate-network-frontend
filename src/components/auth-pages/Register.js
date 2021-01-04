@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   // Create local state
@@ -21,30 +22,6 @@ const Register = () => {
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   // create submit logic without  REDUX
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (password !== password2) {
-      console.log('Passwords do not match');
-    } else {
-      const newUser = {
-        username, email, role, password, password2,
-      };
-      try {
-        //  make sending data to backend possible
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-
-        };
-        const body = JSON.stringify(newUser);
-        const res = await axios.post('/api/users', body, config);
-        console.log(res.data);
-      } catch (error) {
-        console.error(error.response.data);
-      }
-    }
-  };
 
   return (
     <>
@@ -54,7 +31,7 @@ const Register = () => {
         {' '}
         Create Your Account
       </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form className="form">
         <div className="form-group">
           <input
             type="text"
@@ -120,9 +97,10 @@ const Register = () => {
       <p className="my-1">
         Already have an account?
         {' '}
-        <a href="login.html">Sign In</a>
+        <Link to="/login">Sign In</Link>
       </p>
     </>
   );
 };
+
 export default Register;
