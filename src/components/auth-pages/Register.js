@@ -1,8 +1,13 @@
 import React, { Fragment, useState } from 'react';
 // import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Register = () => {
+//  for Redux
+import { connect } from 'react-redux';
+import setAlert from '../../actions/alert';
+
+const Register = ({ setAlert }) => {
   // Create local state
   const [formData, setFormData] = useState({
     username: '',
@@ -21,7 +26,15 @@ const Register = () => {
   // e.target.name makes onchange available for all fields
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // create submit logic without  REDUX
+  // create submit logic
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      setAlert('Passwords do not match', 'danger');
+    } else {
+      console.log('Success');
+    }
+  };
 
   return (
     <>
@@ -31,7 +44,7 @@ const Register = () => {
         {' '}
         Create Your Account
       </p>
-      <form className="form">
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
             type="text"
@@ -103,4 +116,9 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+};
+
+// You must pass in actions to connect before usage
+export default connect(null, { setAlert })(Register);
