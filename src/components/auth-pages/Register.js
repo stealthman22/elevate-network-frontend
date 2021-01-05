@@ -55,7 +55,6 @@ const Register = ({ setAlert, register }) => {
             name="username"
             value={username}
             onChange={(e) => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
@@ -65,7 +64,6 @@ const Register = ({ setAlert, register }) => {
             name="email"
             value={email}
             onChange={(e) => onChange(e)}
-            required
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -79,7 +77,6 @@ const Register = ({ setAlert, register }) => {
             name="role"
             value={role}
             onChange={(e) => onChange(e)}
-            required
             id="role"
           />
           <small className="form-text">
@@ -93,7 +90,6 @@ const Register = ({ setAlert, register }) => {
             name="password"
             value={password}
             onChange={(e) => onChange(e)}
-            required
             minLength="8"
           />
         </div>
@@ -104,7 +100,6 @@ const Register = ({ setAlert, register }) => {
             name="password2"
             value={password2}
             onChange={(e) => onChange(e)}
-            required
             minLength="8"
           />
         </div>

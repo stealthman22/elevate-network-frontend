@@ -12,7 +12,7 @@ import Faq from './components/Faq';
 import Register from './components/auth-pages/Register';
 import Login from './components/auth-pages/Login';
 import ForgotPswd from './components/auth-pages/ForgotPassword';
-import Alert from './components/elements/alert';
+import Alert from './components/elements/Alert';
 import './App.css';
 
 // For Redux

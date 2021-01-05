@@ -8,7 +8,13 @@ import { connect } from 'react-redux';
 const Alert = ({ alerts }) => alerts !== null
  && alerts.length > 0
  && alerts.map((alert) => (
-   <p key={alert.id} className={`alert alert-${alert.alertType}`} style={{ marginTop: 0 }}>
+   <p
+     key={alert.id}
+     className={`alert alert-${alert.alertType}`}
+     style={{
+       marginTop: 0,
+     }}
+   >
      {alert.msg}
    </p>
  ));

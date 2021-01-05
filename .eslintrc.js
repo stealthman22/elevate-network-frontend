@@ -30,9 +30,10 @@ module.exports = {
       'error',
       {
         // setAlert, register, at register component
+        // login at login component
         //  alerts at ?
 
-        allow: ['setAlert', 'register', 'alerts'],
+        allow: ['setAlert', 'register', 'login', 'alerts'],
       },
     ],
     // Disable Prefer destructuring on arrays

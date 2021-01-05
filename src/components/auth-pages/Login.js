@@ -2,7 +2,12 @@ import React, { Fragment, useState } from 'react';
 // import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+// For Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
+
+const Login = ({ login }) => {
   // Create local state
   const [formData, setFormData] = useState({
     email: '',
@@ -18,7 +23,11 @@ const Login = () => {
   // e.target.name makes onchange available for all fields
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // create submit logic without  REDUX
+  // create submit logic
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    login(email, password);
+  };
 
   return (
     <>
@@ -28,7 +37,7 @@ const Login = () => {
         {' '}
         Log into Your Account
       </p>
-      <form className="form">
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
             type="email"
@@ -64,4 +73,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+};
+
+export default connect(null, { login })(Login);
