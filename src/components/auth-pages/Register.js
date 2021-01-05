@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 //  for Redux
 import { connect } from 'react-redux';
 import setAlert from '../../actions/alert';
-import register from '../../actions/auth';
+import { register } from '../../actions/auth';
 
 const Register = ({ setAlert, register }) => {
   // Create local state

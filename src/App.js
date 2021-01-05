@@ -1,8 +1,9 @@
 // Packages
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Components
+
 import { Provider } from 'react-redux';
 import Home from './components/Home';
 import Community from './components/Community';
@@ -17,24 +18,35 @@ import './App.css';
 // For Redux
 //  connects react and redux
 import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <>
-        <Route exact path="/" component={Home} />
-        <Alert />
-        <Switch>
-          <Route exact path="/community" component={Community} />
-          <Route exact path="/events" component={Events} />
-          <Route exact path="/faq" component={Faq} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/forgotPassword" component={ForgotPswd} />
-        </Switch>
-      </>
-    </Router>
-  </Provider>
-);
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
+const App = () => {
+  // Component did mount
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+  return (
+    <Provider store={store}>
+      <Router>
+        <>
+          <Route exact path="/" component={Home} />
+          <Alert />
+          <Switch>
+            <Route exact path="/community" component={Community} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/faq" component={Faq} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/forgotPassword" component={ForgotPswd} />
+          </Switch>
+        </>
+      </Router>
+    </Provider>
+  );
+};
 export default App;
