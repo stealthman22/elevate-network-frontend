@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 //  for Redux
 import { connect } from 'react-redux';
 import setAlert from '../../actions/alert';
+import register from '../../actions/auth';
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   // Create local state
   const [formData, setFormData] = useState({
     username: '',
@@ -32,7 +33,9 @@ const Register = ({ setAlert }) => {
     if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
     } else {
-      console.log('Success');
+      register({
+        username, email, role, password,
+      });
     }
   };
 
@@ -118,7 +121,8 @@ const Register = ({ setAlert }) => {
 
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
 };
 
 // You must pass in actions to connect before usage
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, register })(Register);

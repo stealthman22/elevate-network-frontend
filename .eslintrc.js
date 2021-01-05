@@ -29,8 +29,13 @@ module.exports = {
     'no-shadow': [
       'error',
       {
-        allow: ['setAlert', 'alerts'],
+        // setAlert, register, at register component
+        //  alerts at ?
+
+        allow: ['setAlert', 'register', 'alerts'],
       },
     ],
+    // Disable Prefer destructuring on arrays
+    // 'prefer-destructuring': ['error', { object: false, array: false }],
   },
 };
