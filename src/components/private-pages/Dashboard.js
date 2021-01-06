@@ -7,8 +7,4 @@ const Dashboard = () => (
   </div>
 );
 
-Dashboard.propTypes = {
-
-};
-
 export default Dashboard;
