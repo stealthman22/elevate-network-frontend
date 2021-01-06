@@ -25,6 +25,7 @@ module.exports = {
     indent: [2, 2, { SwitchCase: 1 }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-props-no-spreading': 'off',
     // PROP SHADOW ERROR IN ESLINT
     'no-shadow': [
       'error',
