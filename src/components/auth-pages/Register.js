@@ -52,6 +52,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       </p>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
+          <small>
+            Something nice that resonates with you e.g HighFlyer
+          </small>
           <input
             type="text"
             placeholder="Username"
@@ -61,6 +64,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           />
         </div>
         <div className="form-group">
+          <small className="form-text">
+            This site uses Gravatar so if you want a profile image, use a
+            Gravatar email. Check FAQ page for instructions.
+          </small>
           <input
             type="email"
             placeholder="Email Address"
@@ -68,12 +75,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             value={email}
             onChange={(e) => onChange(e)}
           />
-          <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email. Check FAQ page for instructions.
-          </small>
+
         </div>
         <div className="form-group">
+          <small className="form-text">
+            Please select how you want to be registered; mentee, mentor and partner
+          </small>
           <input
             type="text"
             placeholder="mentee, mentor or partner"
@@ -82,9 +89,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={(e) => onChange(e)}
             id="role"
           />
-          <small className="form-text">
-            Please select how you want to be registered; mentee, mentor and partner
-          </small>
+
         </div>
         <div className="form-group">
           <input
