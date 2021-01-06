@@ -50,7 +50,7 @@ const register = ({
   });
 
   try {
-    const res = await axios.post('/api/users', body, config);
+    const res = await axios.post('/api/user', body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
