@@ -26,7 +26,8 @@ const Login = ({ login }) => {
   // create submit logic
   const onSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
+    // should be an object with properties
+    login({ email, password });
   };
 
   return (

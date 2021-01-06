@@ -56,7 +56,7 @@ const register = ({
       payload: res.data,
     });
     // So user is loaded immediately
-    // dispatch(loadUser());
+    dispatch(loadUser());
   } catch (err) {
     const { errors } = err.response.data;
 
@@ -92,7 +92,7 @@ const login = ({
       payload: res.data,
     });
     // So user is loaded immediately
-    // dispatch(loadUser());
+    dispatch(loadUser());
   } catch (err) {
     const { errors } = err.response.data;
     // console.log('The login error is here: ', errors);
