@@ -78,4 +78,6 @@ Login.propTypes = {
   login: PropTypes.func.isRequired,
 };
 
+// redirect to dashboard
+
 export default connect(null, { login })(Login);

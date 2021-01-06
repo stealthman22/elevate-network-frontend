@@ -14,6 +14,7 @@ import Register from './components/auth-pages/Register';
 import Login from './components/auth-pages/Login';
 import ForgotPswd from './components/auth-pages/ForgotPassword';
 import Alert from './components/elements/Alert';
+import Dashboard from './components/private-pages/Dashboard';
 import './App.css';
 
 // For Redux
@@ -45,6 +46,7 @@ const App = () => {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgotPassword" component={ForgotPswd} />
+            <Route exact path="/Dashboard" component={Dashboard} />
           </Switch>
         </>
       </Router>
