@@ -5,6 +5,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOG_OUT,
 } from '../actions/types';
 
 // inistate is the value of token in localstorage
@@ -39,6 +40,7 @@ export default function registerFunc(state = initialState, action) {
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
+    case LOG_OUT:
       localStorage.removeItem('token');
       return {
         ...state,

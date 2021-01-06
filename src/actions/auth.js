@@ -8,6 +8,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOG_OUT,
 } from './types';
 
 // Global header
@@ -107,4 +108,12 @@ const login = ({
   }
 };
 
-export { register, loadUser, login };
+//  lOGOUT / ClearProfile
+
+const logout = () => (dispatch) => {
+  dispatch({ type: LOG_OUT });
+};
+
+export {
+  register, loadUser, login, logout,
+};

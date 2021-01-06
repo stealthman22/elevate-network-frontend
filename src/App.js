@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // Components
 
 import { Provider } from 'react-redux';
+import Navbar from './components/elements/Navbar';
 import Home from './components/Home';
 import Community from './components/Community';
 import Events from './components/Events';
@@ -34,6 +35,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <>
+          <Navbar />
           <Route exact path="/" component={Home} />
           <Alert />
           <Switch>
