@@ -13,7 +13,7 @@ import {
 } from './types';
 
 // Global header
-import setAuthToken from '../utils/setAuthToken';
+import setAuthToken from '../../utils/setAuthToken';
 
 // Load user
 const loadUser = () => async (dispatch) => {

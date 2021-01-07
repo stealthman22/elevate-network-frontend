@@ -21,7 +21,7 @@ import './App.css';
 // For Redux
 //  connects react and redux
 import store from './store';
-import { loadUser } from './actions/auth';
+import { loadUser } from './redux/actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 if (localStorage.token) {

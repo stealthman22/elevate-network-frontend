@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 // For Redux
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../actions/auth';
+import { login } from '../../redux/actions/auth';
 
 const Login = ({ login, isAuthenticated }) => {
   // Create local state
