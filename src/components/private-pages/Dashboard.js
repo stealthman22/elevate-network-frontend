@@ -24,7 +24,8 @@ const Dashboard = ({
         {' '}
         Welcome
         {' '}
-        {user && user.user.username}
+        {user && [user.user.role, ' ', user.user.username]}
+        { console.log(user.user.role)}
       </p>
       {profile !== null ? (
         <>
@@ -50,6 +51,7 @@ Dashboard.propTypes = {
     user: PropTypes.shape({
       user: PropTypes.shape({
         username: PropTypes.string,
+        role: PropTypes.string,
       }),
     }),
   }).isRequired,

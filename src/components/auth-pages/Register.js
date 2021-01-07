@@ -81,14 +81,25 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           <small className="form-text">
             Please select how you want to be registered; mentee, mentor and partner
           </small>
-          <input
+          {/* <input
             type="text"
-            placeholder="mentee, mentor or partner"
+            placeholder="Mentee, Mentor or Partner"
             name="role"
             value={role}
             onChange={(e) => onChange(e)}
             id="role"
-          />
+          /> */}
+
+          <select
+            name="role"
+            onChange={(e) => onChange(e)}
+            id="role"
+          >
+            <option value="select">---Select an option below---</option>
+            <option value="Mentee">Mentee</option>
+            <option value="Mentor">Mentor</option>
+            <option value="Partner">Partner</option>
+          </select>
 
         </div>
         <div className="form-group">
