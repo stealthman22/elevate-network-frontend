@@ -25,5 +25,19 @@ module.exports = {
     indent: [2, 2, { SwitchCase: 1 }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-props-no-spreading': 'off',
+    // PROP SHADOW ERROR IN ESLINT
+    'no-shadow': [
+      'error',
+      {
+        // setAlert, register, at register component
+        // login at login component
+        //  alerts at ?
+
+        allow: ['setAlert', 'register', 'login', 'alerts', 'logout', 'getCurrentProfile', 'createProfile'],
+      },
+    ],
+    // Disable Prefer destructuring on arrays
+    // 'prefer-destructuring': ['error', { object: false, array: false }],
   },
 };
