@@ -35,7 +35,7 @@ const createProfile = (formData, history, edit = false) => async (dispatch) => {
       },
     };
 
-    const res = await axios.post('api/profile', formData, config);
+    const res = await axios.post('api/mentorProfile', formData, config);
 
     dispatch({
       type: GET_PROFILE,
