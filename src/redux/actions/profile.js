@@ -27,7 +27,7 @@ const getCurrentProfile = () => async (dispatch) => {
 };
 
 // Create or update a profile
-const createProfile = (formData, history, edit = false) => async (dispatch) => {
+const createMenteeProfile = (formData, history, edit = false) => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -35,7 +35,7 @@ const createProfile = (formData, history, edit = false) => async (dispatch) => {
       },
     };
 
-    const res = await axios.post('api/mentorProfile', formData, config);
+    const res = await axios.post('/api/menteeProfile', formData, config);
 
     dispatch({
       type: GET_PROFILE,
@@ -64,4 +64,4 @@ const createProfile = (formData, history, edit = false) => async (dispatch) => {
   }
 };
 
-export { getCurrentProfile, createProfile };
+export { getCurrentProfile, createMenteeProfile };

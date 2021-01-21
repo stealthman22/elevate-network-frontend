@@ -15,7 +15,7 @@ import Login from './components/auth-pages/Login';
 import ForgotPswd from './components/auth-pages/ForgotPassword';
 import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
-import CreateProfile from './components/private-pages/profile-forms/CreateProfile';
+import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
 import './App.css';
 
@@ -49,7 +49,7 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+            <PrivateRoute exact path="/create-profile" component={CreateMenteeProfile} />
           </Switch>
         </>
       </Router>

@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../../redux/actions/profile';
+import { createMenteeProfile } from '../../../redux/actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
   const [formData, setformData] = useState({
     fullName: '',
     age: '',
@@ -42,7 +42,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    createMenteeProfile(formData, history);
   };
 
   return (
@@ -135,15 +135,15 @@ const CreateProfile = ({ createProfile, history }) => {
           </>
         )}
 
-        <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <input type="submit" className="btn btn-primary my-1" value="Submit" />
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
     </>
   );
 };
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
+CreateMenteeProfile.propTypes = {
+  createMenteeProfile: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+export default connect(null, { createMenteeProfile })(withRouter(CreateMenteeProfile));
