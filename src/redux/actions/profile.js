@@ -26,7 +26,7 @@ const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-// Create or update a profile
+// Create or update a mentee profile
 const createMenteeProfile = (formData, history, edit = false) => async (dispatch) => {
   try {
     const config = {
@@ -42,7 +42,7 @@ const createMenteeProfile = (formData, history, edit = false) => async (dispatch
       payload: res.data,
     });
 
-    dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created'));
+    dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
     if (!edit) {
       history.push('/dashboard');

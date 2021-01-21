@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../redux/actions/profile';
 import Spinner from '../elements/Spinner';
+import DashboardActions from './DashboardActions';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -29,7 +30,7 @@ const Dashboard = ({
       </p>
       {profile !== null ? (
         <>
-          has
+          <DashboardActions />
         </>
       )
         : (
