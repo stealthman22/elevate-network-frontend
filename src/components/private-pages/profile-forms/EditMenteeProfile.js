@@ -1,17 +1,21 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createMenteeProfile } from '../../../redux/actions/profile';
+import { createMenteeProfile, getCurrentProfile } from '../../../redux/actions/profile';
 
-const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
+const EditMenteeProfile = ({
+  profile: { profile, loading },
+  createMenteeProfile, getCurrentProfile,
+  history,
+}) => {
   const [formData, setformData] = useState({
     fullName: '',
     age: '',
     aboutMe: '',
     location: '',
     dob: '',
-    // profilePic: '',
+    profilePic: '',
     skills: '',
     learningInterests: '',
     youtube: '',
@@ -22,6 +26,27 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    // fill form with current values
+    setformData({
+      fullName: loading || !profile.bio.fullName ? '' : profile.bio.fullName,
+      age: loading || !profile.bio.age ? '' : profile.bio.age,
+      aboutMe: loading || !profile.bio.aboutMe ? '' : profile.bio.aboutMe,
+      location: loading || !profile.bio.location ? '' : profile.bio.location,
+      dob: loading || !profile.bio.dob ? '' : profile.bio.dob,
+      // profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
+      skills: loading || !profile.interests.skills ? '' : profile.interests.skills,
+      learningInterests: loading || !profile.interests.learningInterests ? '' : profile.interests.learningInterests,
+      youtube: loading || !profile.youtube ? '' : profile.youtube,
+      facebook: loading || !profile.facebook ? '' : profile.facebook,
+      twitter: loading || !profile.twitter ? '' : profile.twitter,
+      instagram: loading || !profile.instagram ? '' : profile.instagram,
+      linkedin: loading || !profile.linkedin ? '' : profile.linkedin,
+    }, [loading]);
+  });
 
   const {
     fullName,
@@ -49,7 +74,7 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
 
     <>
       <h1 className="large text-primary">
-        Create Your Profile
+        Edit Your Profile
       </h1>
       <p className="lead">
         <i className="fas fa-user" />
@@ -141,9 +166,22 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
     </>
   );
 };
-CreateMenteeProfile.propTypes = {
+
+EditMenteeProfile.propTypes = {
   createMenteeProfile: PropTypes.func.isRequired,
+  profile: PropTypes.shape({
+    loading: PropTypes.func,
+    profile: PropTypes.func,
+  }).isRequired,
   history: PropTypes.shape({}).isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createMenteeProfile })(withRouter(CreateMenteeProfile));
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, {
+  createMenteeProfile,
+  getCurrentProfile,
+})(withRouter(EditMenteeProfile));

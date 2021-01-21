@@ -21,7 +21,7 @@ const Dashboard = ({
         Dashboard
       </h1>
       <p className="lead">
-        <i className="fas fa-user" />
+        {/* <i className="fa fa-user" /> */}
         {' '}
         Welcome
         {' '}

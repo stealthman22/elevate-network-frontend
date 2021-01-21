@@ -16,6 +16,7 @@ import ForgotPswd from './components/auth-pages/ForgotPassword';
 import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
 import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
+import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
 import './App.css';
 
@@ -50,6 +51,7 @@ const App = () => {
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/create-profile" component={CreateMenteeProfile} />
+            <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
           </Switch>
         </>
       </Router>

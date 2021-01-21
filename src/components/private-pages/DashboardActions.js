@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const DashboardActions = () => (
   <div className="dash-buttons">
     <Link
-      to="edit-profile.html"
-      class="btn btn-light"
+      to="/edit-profile"
+      className="btn btn-light"
     >
       <i className="fas fa-user-circle text-primary" />
       {' '}
@@ -13,7 +13,7 @@ const DashboardActions = () => (
     </Link>
     <Link
       to="/add-experience"
-      class="btn btn-light"
+      className="btn btn-light"
     >
       <i className="fab fa-black-tie text-primary" />
       {' '}
@@ -21,7 +21,7 @@ const DashboardActions = () => (
     </Link>
     <Link
       to="/add-education"
-      class="btn btn-light"
+      className="btn btn-light"
     >
       <i className="fas fa-graduation-cap text-primary" />
       {' '}
