@@ -1,27 +1,96 @@
-import React, { Fragment, useState } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+// import React, { Fragment, useState } from 'react';
+// import { withRouter, Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import { createMenteeProfile } from '../../../redux/actions/profile';
+
+// const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
+//   const [formData, setformData] = useState({
+// fullName: '',
+// age: '',
+// aboutMe: '',
+// location: '',
+// dob: '',
+// // profilePic: '',
+// skills: '',
+// learningInterests: '',
+// youtube: '',
+// facebook: '',
+// twitter: '',
+// instagram: '',
+// linkedin: '',
+//   });
+
+//   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+//   const {
+// fullName,
+// age,
+// aboutMe,
+// location,
+// // dob,
+// skills,
+// learningInterests,
+// youtube,
+// facebook,
+// twitter,
+// instagram,
+// linkedin,
+//   } = formData;
+
+//   const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     createMenteeProfile(formData, history);
+//   };
+
+import React, { Fragment, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createMenteeProfile } from '../../../redux/actions/profile';
+import { createMenteeProfile, getCurrentProfile } from '../../../redux/actions/profile';
 
-const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
-  const [formData, setformData] = useState({
-    fullName: '',
-    age: '',
-    aboutMe: '',
-    location: '',
-    dob: '',
-    // profilePic: '',
-    skills: '',
-    learningInterests: '',
-    youtube: '',
-    facebook: '',
-    twitter: '',
-    instagram: '',
-    linkedin: '',
-  });
+const initialState = {
+  fullName: '',
+  age: '',
+  aboutMe: '',
+  location: '',
+  dob: '',
+  // profilePic: '',
+  skills: '',
+  learningInterests: '',
+  youtube: '',
+  facebook: '',
+  twitter: '',
+  instagram: '',
+  linkedin: '',
+};
+
+const CreateMenteeProfile = ({
+  profile: { profile, loading },
+  createMenteeProfile,
+  getCurrentProfile,
+  history,
+}) => {
+  const [formData, setFormData] = useState(initialState);
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    if (!profile) getCurrentProfile();
+    if (!loading && profile) {
+      const profileData = { ...initialState };
+      for (const key in profile) {
+        if (key in profileData) profileData[key] = profile[key];
+      }
+      for (const key in profile.social) {
+        if (key in profileData) profileData[key] = profile.social[key];
+      }
+      if (Array.isArray(profileData.skills)) { profileData.skills = profileData.skills.join(', '); }
+      setFormData(profileData);
+    }
+  }, [loading, getCurrentProfile, profile]);
 
   const {
     fullName,
@@ -38,11 +107,11 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
     linkedin,
   } = formData;
 
-  const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createMenteeProfile(formData, history);
+    createMenteeProfile(formData, history, !!profile);
   };
 
   return (
@@ -97,7 +166,13 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
             Please use comma separated values (eg.
             Arts, Sports, Fishing)
           </small>
-          <input type="text" placeholder="What would you be interested in learning" name="learningInterests" value={learningInterests} onChange={(e) => onChange(e)} />
+          <input
+            type="text"
+            placeholder="What would you be interested in learning"
+            name="learningInterests"
+            value={learningInterests}
+            onChange={(e) => onChange(e)}
+          />
         </div>
 
         <div className="my-2">
@@ -144,6 +219,15 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
 CreateMenteeProfile.propTypes = {
   createMenteeProfile: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.shape({
+    loading: PropTypes.func,
+    profile: PropTypes.func,
+  }).isRequired,
 };
 
-export default connect(null, { createMenteeProfile })(withRouter(CreateMenteeProfile));
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, { createMenteeProfile, getCurrentProfile })(CreateMenteeProfile);

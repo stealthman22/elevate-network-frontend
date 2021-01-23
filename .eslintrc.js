@@ -39,5 +39,12 @@ module.exports = {
     ],
     // Disable Prefer destructuring on arrays
     // 'prefer-destructuring': ['error', { object: false, array: false }],
+
+    // remove max line error
+    'max-len': ['error', { code: 140 }],
+
+    //  allow restricted syntax
+    // other values are "LabeledStatement", "WithStatement", ForOfStatement
+    'no-restricted-syntax': ['error', 'ForInStatement'],
   },
 };
