@@ -95,7 +95,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={(e) => onChange(e)}
             id="role"
           >
-            <option value="select">---Select an option below---</option>
+            <option value="0">---Select an option below---</option>
             <option value="Mentee">Mentee</option>
             <option value="Mentor">Mentor</option>
             <option value="Partner">Partner</option>

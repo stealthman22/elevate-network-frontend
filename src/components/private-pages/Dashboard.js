@@ -26,7 +26,7 @@ const Dashboard = ({
         Welcome
         {' '}
         {user && [user.user.role, ' ', user.user.username]}
-        { console.log(user.user.role)}
+
       </p>
       {profile !== null ? (
         <>

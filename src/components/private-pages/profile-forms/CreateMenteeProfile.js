@@ -1,96 +1,27 @@
-// import React, { Fragment, useState } from 'react';
-// import { withRouter, Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { createMenteeProfile } from '../../../redux/actions/profile';
-
-// const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
-//   const [formData, setformData] = useState({
-// fullName: '',
-// age: '',
-// aboutMe: '',
-// location: '',
-// dob: '',
-// // profilePic: '',
-// skills: '',
-// learningInterests: '',
-// youtube: '',
-// facebook: '',
-// twitter: '',
-// instagram: '',
-// linkedin: '',
-//   });
-
-//   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-
-//   const {
-// fullName,
-// age,
-// aboutMe,
-// location,
-// // dob,
-// skills,
-// learningInterests,
-// youtube,
-// facebook,
-// twitter,
-// instagram,
-// linkedin,
-//   } = formData;
-
-//   const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
-
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-//     createMenteeProfile(formData, history);
-//   };
-
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useState } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createMenteeProfile, getCurrentProfile } from '../../../redux/actions/profile';
+import { createMenteeProfile } from '../../../redux/actions/profile';
 
-const initialState = {
-  fullName: '',
-  age: '',
-  aboutMe: '',
-  location: '',
-  dob: '',
-  // profilePic: '',
-  skills: '',
-  learningInterests: '',
-  youtube: '',
-  facebook: '',
-  twitter: '',
-  instagram: '',
-  linkedin: '',
-};
-
-const CreateMenteeProfile = ({
-  profile: { profile, loading },
-  createMenteeProfile,
-  getCurrentProfile,
-  history,
-}) => {
-  const [formData, setFormData] = useState(initialState);
+const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
+  const [formData, setformData] = useState({
+    fullName: '',
+    age: '',
+    aboutMe: '',
+    location: '',
+    dob: '',
+    // profilePic: '',
+    skills: '',
+    learningInterests: '',
+    youtube: '',
+    facebook: '',
+    twitter: '',
+    instagram: '',
+    linkedin: '',
+  });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-
-  useEffect(() => {
-    if (!profile) getCurrentProfile();
-    if (!loading && profile) {
-      const profileData = { ...initialState };
-      for (const key in profile) {
-        if (key in profileData) profileData[key] = profile[key];
-      }
-      for (const key in profile.social) {
-        if (key in profileData) profileData[key] = profile.social[key];
-      }
-      if (Array.isArray(profileData.skills)) { profileData.skills = profileData.skills.join(', '); }
-      setFormData(profileData);
-    }
-  }, [loading, getCurrentProfile, profile]);
 
   const {
     fullName,
@@ -107,11 +38,11 @@ const CreateMenteeProfile = ({
     linkedin,
   } = formData;
 
-  const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createMenteeProfile(formData, history, !!profile);
+    createMenteeProfile(formData, history);
   };
 
   return (
@@ -219,15 +150,6 @@ const CreateMenteeProfile = ({
 CreateMenteeProfile.propTypes = {
   createMenteeProfile: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
-  getCurrentProfile: PropTypes.func.isRequired,
-  profile: PropTypes.shape({
-    loading: PropTypes.func,
-    profile: PropTypes.func,
-  }).isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  profile: state.profile,
-});
-
-export default connect(mapStateToProps, { createMenteeProfile, getCurrentProfile })(CreateMenteeProfile);
+export default connect(null, { createMenteeProfile })(withRouter(CreateMenteeProfile));

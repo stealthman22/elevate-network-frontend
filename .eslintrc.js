@@ -45,6 +45,6 @@ module.exports = {
 
     //  allow restricted syntax
     // other values are "LabeledStatement", "WithStatement", ForOfStatement
-    'no-restricted-syntax': ['error', 'ForInStatement'],
+    'no-restricted-syntax': [0, 'ForInStatement'],
   },
 };
