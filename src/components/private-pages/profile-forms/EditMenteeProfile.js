@@ -40,13 +40,13 @@ const EditMenteeProfile = ({
         location: loading || !profile.bio.location ? '' : profile.bio.location,
         dob: loading || !profile.bio.dob ? '' : profile.bio.dob,
         // profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
-        skills: loading || !profile.skills ? '' : profile.skills.join(','),
-        learningInterests: loading || !profile.learningInterests ? '' : profile.learningInterests.join(','),
-        youtube: loading || !profile.youtube ? '' : profile.youtube,
-        facebook: loading || !profile.facebook ? '' : profile.facebook,
-        twitter: loading || !profile.twitter ? '' : profile.twitter,
-        instagram: loading || !profile.instagram ? '' : profile.instagram,
-        linkedin: loading || !profile.linkedin ? '' : profile.linkedin,
+        skills: loading || !profile.interests.skills ? '' : profile.interests.skills.join(','),
+        learningInterests: loading || !profile.interests.learningInterests ? '' : profile.interests.learningInterests.join(','),
+        youtube: loading || !profile.social.youtube ? '' : profile.social.youtube,
+        facebook: loading || !profile.social.facebook ? '' : profile.social.facebook,
+        twitter: loading || !profile.social.twitter ? '' : profile.social.twitter,
+        instagram: loading || !profile.social.instagram ? '' : profile.social.instagram,
+        linkedin: loading || !profile.social.linkedin ? '' : profile.social.linkedin,
       },
     );
   }, [loading]);
@@ -154,7 +154,7 @@ const EditMenteeProfile = ({
 
             <div className="form-group social-input">
               <i className="fab fa-youtube fa-2x" />
-              <input type="text" placeholder="YouTube URL" name="youtube" value={youtube} onChange={(e) => onChange(e)} />
+              <input type="text" placeholder="youtube URL" name="youtube" value={youtube} onChange={(e) => onChange(e)} />
             </div>
 
             <div className="form-group social-input">

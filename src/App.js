@@ -17,6 +17,7 @@ import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
 import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
 import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
+// import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
 import './App.css';
 

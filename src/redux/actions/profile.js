@@ -34,10 +34,9 @@ const createMenteeProfile = (formData, history, edit = false) => async (dispatch
         'Content-Type': 'application/json',
 
       },
-      // withCredentials: true,
     };
 
-    const res = await axios.post('api/profile', formData, config);
+    const res = await axios.post('/api/profile', formData, config);
     console.log(res);
     dispatch({
       type: GET_PROFILE,

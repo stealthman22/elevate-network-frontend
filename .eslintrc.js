@@ -45,6 +45,10 @@ module.exports = {
 
     //  allow restricted syntax
     // other values are "LabeledStatement", "WithStatement", ForOfStatement
+    // line 33 handleMenteeProfile
     'no-restricted-syntax': [0, 'ForInStatement'],
+    // no unnedded tenary
+    // line 68 handleMenteeProfile
+    'no-unneeded-ternary': 'off',
   },
 };
