@@ -36,10 +36,11 @@ const AddEdu = ({ addExp, history }) => {
        Add An Experience
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch" />
+        <i className="fas fa-briefcase" />
         {' '}
-Add any developer/programming
-        positions that you have had in the past
+        Add any work Experience you&apos;ve had in the past,
+        volunteering also counts.
+
       </p>
       <small>* = required field</small>
       <form
