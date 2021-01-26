@@ -53,7 +53,7 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/create-profile" component={CreateMenteeProfile} />
+            <PrivateRoute exact path="/create-mentee-profile" component={CreateMenteeProfile} />
             <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
             <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
             <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />

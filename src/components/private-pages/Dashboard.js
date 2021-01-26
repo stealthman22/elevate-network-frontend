@@ -47,19 +47,26 @@ const Dashboard = ({
             ? (
               <>
                 <p>You have not yet setup a profile, please add some info</p>
-                <Link to="/create-profile" className="btn btn-primary my-1">
+                <Link to="/create-mentee-profile" className="btn btn-primary my-1">
                   Create Profile
                 </Link>
               </>
-            )
-            : (
+            ) : user.user.role === 'Partner' ? (
               <>
                 <p>You have not yet setup a profile, please add some info</p>
-                <Link to="/create-mentor-profile" className="btn btn-primary my-1">
-                  Create Profile
+                <Link to="/create-partner-profile" className="btn btn-primary my-1">
+                    Create Profile
                 </Link>
               </>
             )
+              : (
+                <>
+                  <p>You have not yet setup a profile, please add some info</p>
+                  <Link to="/create-mentor-profile" className="btn btn-primary my-1">
+                  Create Profile
+                  </Link>
+                </>
+              )
 
         )}
     </>

@@ -53,5 +53,10 @@ module.exports = {
     //  nested tenary
     //  line 46 in Dashboard.js
     'no-nested-ternary': 'warn',
+    // react/jsx-closing-tag-location
+    // Dashboard.js line 60
+    'react/jsx-closing-tag-location': 'off',
+    'react/jsx-indent': 'off',
+
   },
 };
