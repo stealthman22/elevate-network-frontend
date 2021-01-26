@@ -42,11 +42,11 @@ const EditMenteeProfile = ({
         // profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
         skills: loading || !profile.interests.skills ? '' : profile.interests.skills.join(','),
         learningInterests: loading || !profile.interests.learningInterests ? '' : profile.interests.learningInterests.join(','),
-        youtube: loading || !profile.social.youtube ? '' : profile.social.youtube,
-        facebook: loading || !profile.social.facebook ? '' : profile.social.facebook,
-        twitter: loading || !profile.social.twitter ? '' : profile.social.twitter,
-        instagram: loading || !profile.social.instagram ? '' : profile.social.instagram,
-        linkedin: loading || !profile.social.linkedin ? '' : profile.social.linkedin,
+        youtube: loading || !profile.social ? '' : profile.social.youtube,
+        facebook: loading || !profile.social ? '' : profile.social.facebook,
+        twitter: loading || !profile.social ? '' : profile.social.twitter,
+        instagram: loading || !profile.social ? '' : profile.social.instagram,
+        linkedin: loading || !profile.social ? '' : profile.social.linkedin,
       },
     );
   }, [loading]);

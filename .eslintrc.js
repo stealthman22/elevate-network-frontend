@@ -50,5 +50,8 @@ module.exports = {
     // no unnedded tenary
     // line 68 handleMenteeProfile
     'no-unneeded-ternary': 'off',
+    //  nested tenary
+    //  line 46 in Dashboard.js
+    'no-nested-ternary': 'warn',
   },
 };

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../redux/actions/profile';
 import Spinner from '../elements/Spinner';
 import DashboardActions from './DashboardActions';
+// import CreateMenteeProfile from './profile-forms/CreateMenteeProfile';
+// import CreateMentorProfile from './profile-forms/CreateMentorProfile';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -14,6 +16,13 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, []);
+
+  // const onClick = () => {
+  //   if (user.user.role === 'Mentee') {
+  //     return CreateMenteeProfile;
+  //   }
+  //   return CreateMentorProfile;
+  // };
 
   return loading && profile === null ? <Spinner /> : (
     <>
@@ -34,13 +43,24 @@ const Dashboard = ({
         </>
       )
         : (
-          <>
-            <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-primary my-1">
-              Create Profile
-            </Link>
+          user.user.role === 'Mentee'
+            ? (
+              <>
+                <p>You have not yet setup a profile, please add some info</p>
+                <Link to="/create-profile" className="btn btn-primary my-1">
+                  Create Profile
+                </Link>
+              </>
+            )
+            : (
+              <>
+                <p>You have not yet setup a profile, please add some info</p>
+                <Link to="/create-mentor-profile" className="btn btn-primary my-1">
+                  Create Profile
+                </Link>
+              </>
+            )
 
-          </>
         )}
     </>
   );

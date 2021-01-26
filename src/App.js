@@ -16,6 +16,8 @@ import ForgotPswd from './components/auth-pages/ForgotPassword';
 import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
 import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
+import CreateMentorProfile from './components/private-pages/profile-forms/CreateMentorProfile';
+import CreatePartnerProfile from './components/private-pages/profile-forms/CreatePartnerProfile';
 import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
 // import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
@@ -52,6 +54,8 @@ const App = () => {
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/create-profile" component={CreateMenteeProfile} />
+            <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
+            <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
             <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
           </Switch>
         </>
