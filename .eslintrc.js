@@ -34,7 +34,7 @@ module.exports = {
         // login at login component
         //  alerts at ?
 
-        allow: ['setAlert', 'register', 'login', 'alerts', 'logout', 'getCurrentProfile', 'createMenteeProfile'],
+        allow: ['setAlert', 'register', 'login', 'alerts', 'logout', 'getCurrentProfile', 'createMenteeProfile', 'addExp'],
       },
     ],
     // Disable Prefer destructuring on arrays
@@ -57,6 +57,5 @@ module.exports = {
     // Dashboard.js line 60
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-indent': 'off',
-
   },
 };

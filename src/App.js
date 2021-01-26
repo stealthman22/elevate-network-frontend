@@ -19,6 +19,7 @@ import CreateMenteeProfile from './components/private-pages/profile-forms/Create
 import CreateMentorProfile from './components/private-pages/profile-forms/CreateMentorProfile';
 import CreatePartnerProfile from './components/private-pages/profile-forms/CreatePartnerProfile';
 import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
+import AddExp from './components/private-pages/profile-forms/AddExp';
 // import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
 import './App.css';
@@ -57,6 +58,8 @@ const App = () => {
             <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
             <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
             <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
+            <PrivateRoute exact path="/add-experience" component={AddExp} />
+
           </Switch>
         </>
       </Router>
