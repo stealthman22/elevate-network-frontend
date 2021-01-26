@@ -12,7 +12,7 @@ const AddEdu = ({ addEdu, history }) => {
     location: '',
     from: '',
     to: '',
-    current: '',
+    current: false,
     description: '',
   });
 
@@ -38,7 +38,7 @@ const AddEdu = ({ addEdu, history }) => {
        Add Your Education
       </h1>
       <p className="lead">
-        <i className="fas fa-briefcase" />
+        <i className="fas fa-user-graduate" />
         {' '}
         Add any School or Certification course you&apos;ve attended in the past,
 

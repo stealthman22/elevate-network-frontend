@@ -52,10 +52,11 @@ module.exports = {
     'no-unneeded-ternary': 'off',
     //  nested tenary
     //  line 46 in Dashboard.js
-    'no-nested-ternary': 'warn',
+    'no-nested-ternary': 'off',
     // react/jsx-closing-tag-location
     // Dashboard.js line 60
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-indent': 'off',
+    'no-underscore-dangle': 'off',
   },
 };
