@@ -23,6 +23,7 @@ import AddExp from './components/private-pages/profile-forms/AddExp';
 import AddEdu from './components/private-pages/profile-forms/AddEdu';
 // import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
+import Profiles from './components/private-pages/profiles/Profiles';
 import './App.css';
 
 // For Redux
@@ -61,6 +62,7 @@ const App = () => {
             <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
             <PrivateRoute exact path="/add-experience" component={AddExp} />
             <PrivateRoute exact path="/add-education" component={AddEdu} />
+            <PrivateRoute exact path="/profile" component={Profiles} />
 
           </Switch>
         </>

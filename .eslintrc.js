@@ -36,7 +36,8 @@ module.exports = {
 
         allow: ['setAlert', 'register', 'login',
           'alerts', 'logout', 'getCurrentProfile',
-          'createMenteeProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount'],
+          'createMenteeProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount', 'getProfiles',
+          'getProfileById'],
       },
     ],
     // Disable Prefer destructuring on arrays
