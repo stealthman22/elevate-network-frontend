@@ -3,14 +3,63 @@ import setAlert from './alert';
 
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_ERROR,
   UPDATE_PROFILE,
+  CLEAR_PROFILE,
+  ACCOUNT_DELETED,
 } from './types';
 
 // Get current user's profile
 const getCurrentProfile = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
   try {
     const res = await axios.get('/api/profile/me');
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        status: error.response.status,
+        msg: error.response.statusText,
+      },
+    });
+  }
+};
+
+// Get all Profiles
+const getProfiles = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+  try {
+    const res = await axios.get('/api/profile');
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        status: error.response.status,
+        msg: error.response.statusText,
+      },
+    });
+  }
+};
+
+// Get profile by id
+const getProfileById = (userId) => async (dispatch) => {
+  try {
+    const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
       type: GET_PROFILE,
@@ -138,6 +187,83 @@ const addEdu = (formData, history) => async (dispatch) => {
   }
 };
 
+// Delete Experiences
+const deleteExp = (id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`/api/profile/experience/${id}`);
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data,
+    });
+
+    dispatch(setAlert('Experience Deleted', 'success'));
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+
+      },
+    });
+  }
+};
+
+// Delete Exducation
+const deleteEdu = (id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`/api/profile/education/${id}`);
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data,
+    });
+
+    dispatch(setAlert('Education Deleted', 'success'));
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+
+      },
+    });
+  }
+};
+
+// Delete account and profile
+const deleteAccount = () => async (dispatch) => {
+  if (window.confirm('Are You Sure? This Cannot Be Undone')) {
+    try {
+      const res = await axios.delete('/api/profile/');
+
+      dispatch({ type: CLEAR_PROFILE, payload: res.data });
+      dispatch({ type: ACCOUNT_DELETED, payload: res.data });
+
+      dispatch(setAlert('Your Account Has Been Permanently Deleted'));
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: {
+          msg: err.response.statusText,
+          status: err.response.status,
+
+        },
+      });
+    }
+  }
+};
+
 export {
-  getCurrentProfile, createMenteeProfile, addEdu, addExp,
+  getCurrentProfile,
+  createMenteeProfile,
+  addEdu,
+  addExp,
+  deleteExp,
+  deleteEdu,
+  deleteAccount,
+  getProfiles,
+  getProfileById,
 };

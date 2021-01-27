@@ -34,7 +34,9 @@ module.exports = {
         // login at login component
         //  alerts at ?
 
-        allow: ['setAlert', 'register', 'login', 'alerts', 'logout', 'getCurrentProfile', 'createMenteeProfile', 'addExp', 'addEdu'],
+        allow: ['setAlert', 'register', 'login',
+          'alerts', 'logout', 'getCurrentProfile',
+          'createMenteeProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount'],
       },
     ],
     // Disable Prefer destructuring on arrays

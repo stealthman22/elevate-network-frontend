@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCurrentProfile } from '../../redux/actions/profile';
+import { deleteAccount, getCurrentProfile } from '../../redux/actions/profile';
 import Spinner from '../elements/Spinner';
 import DashboardActions from './DashboardActions';
 import ListExp from './ListExp';
@@ -12,6 +12,7 @@ import ListEdu from './ListEdu';
 
 const Dashboard = ({
   getCurrentProfile,
+  deleteAccount,
   profile: { profile, loading },
   auth: { user },
 }) => {
@@ -40,11 +41,36 @@ const Dashboard = ({
 
       </p>
       {profile !== null ? (
-        <>
-          <DashboardActions />
-          <ListExp experience={profile.experience} />
-          <ListEdu education={profile.education} />
-        </>
+        user.user.role === 'Mentee' ? (
+          <>
+            <DashboardActions />
+
+            <ListEdu education={profile.education} />
+
+            <div className="my-2">
+              <button onClick={() => deleteAccount()} type="button" className="btn btn-danger">
+                <i className="fas fa-user-minus" />
+
+                {' '}
+Delete Account
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <DashboardActions />
+            <ListExp experience={profile.experience} />
+            <ListEdu education={profile.education} />
+
+            <div className="my-2">
+              <button onClick={() => deleteAccount} type="button" className="btn btn-danger">
+                <i className="fas fa-user-minus" />
+                Delete Account
+              </button>
+            </div>
+          </>
+        )
+
       )
         : (
           user.user.role === 'Mentee'
@@ -77,6 +103,7 @@ const Dashboard = ({
 };
 
 Dashboard.propTypes = {
+  deleteAccount: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     user: PropTypes.shape({
@@ -97,4 +124,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard);

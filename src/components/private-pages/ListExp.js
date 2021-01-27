@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { deleteExp } from '../../redux/actions/profile';
 import formatDate from '../../utils/formatDate';
 
-const ListExp = ({ experience }) => {
+const ListExp = ({ experience, deleteExp }) => {
   const experiences = experience.map((exp) => (
     <>
       <tr key={exp._id}>
@@ -18,7 +19,7 @@ const ListExp = ({ experience }) => {
         </td>
       </tr>
       <td>
-        <button type="button" className="btn btn-danger">Delete</button>
+        <button type="button" onClick={() => deleteExp(exp._id)} className="btn btn-danger">Delete</button>
       </td>
     </>
   ));
@@ -42,7 +43,7 @@ const ListExp = ({ experience }) => {
 
 ListExp.propTypes = {
   experience: PropTypes.shape([]).isRequired,
-
+  deleteExp: PropTypes.func.isRequired,
 };
 
-export default ListExp;
+export default connect(null, { deleteExp })(ListExp);
