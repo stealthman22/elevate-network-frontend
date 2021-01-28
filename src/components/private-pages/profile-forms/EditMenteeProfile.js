@@ -2,11 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createMenteeProfile, getCurrentProfile } from '../../../redux/actions/profile';
+import { handleProfile, getCurrentProfile } from '../../../redux/actions/profile';
 
 const EditMenteeProfile = ({
   profile: { profile, loading },
-  createMenteeProfile,
+  handleProfile,
   getCurrentProfile,
   history,
 }) => {
@@ -70,7 +70,7 @@ const EditMenteeProfile = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createMenteeProfile(formData, history);
+    handleProfile(formData, history);
   };
 
   return (
@@ -177,7 +177,7 @@ const EditMenteeProfile = ({
 };
 
 EditMenteeProfile.propTypes = {
-  createMenteeProfile: PropTypes.func.isRequired,
+  handleProfile: PropTypes.func.isRequired,
   profile: PropTypes.shape({
     loading: PropTypes.func,
     profile: PropTypes.func,
@@ -191,6 +191,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  createMenteeProfile,
+  handleProfile,
   getCurrentProfile,
 })(withRouter(EditMenteeProfile));

@@ -36,7 +36,7 @@ module.exports = {
 
         allow: ['setAlert', 'register', 'login',
           'alerts', 'logout', 'getCurrentProfile',
-          'createMenteeProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount', 'getProfiles',
+          'handleProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount', 'getProfiles',
           'getProfileById'],
       },
     ],
@@ -61,5 +61,7 @@ module.exports = {
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-indent': 'off',
     'no-underscore-dangle': 'off',
+    // index as key of array
+    'react/no-array-index-key': 'off',
   },
 };

@@ -15,6 +15,7 @@ const Profiles = ({
 
   return (
     <>
+    aaaaaaaa
       {
         loading ? <Spinner /> : (
           <>
@@ -41,8 +42,8 @@ See who else is in this amazing community, and connect
 Profiles.propTypes = {
   getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.shape({
-    profiles: PropTypes.shape([]).isRequired,
-    loading: PropTypes.func.isRequired,
+    profiles: PropTypes.shape([]),
+    loading: PropTypes.func,
   }).isRequired,
 };
 

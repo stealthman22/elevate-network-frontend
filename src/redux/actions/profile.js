@@ -74,7 +74,7 @@ const getProfileById = (userId) => async (dispatch) => {
 };
 
 // Create or update a mentee profile
-const createMenteeProfile = (formData, history, edit = false) => async (dispatch) => {
+const handleProfile = (formData, history, edit = false) => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -255,7 +255,7 @@ const deleteAccount = () => async (dispatch) => {
 
 export {
   getCurrentProfile,
-  createMenteeProfile,
+  handleProfile,
   addEdu,
   addExp,
   deleteExp,

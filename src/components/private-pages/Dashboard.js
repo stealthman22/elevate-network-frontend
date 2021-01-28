@@ -37,7 +37,7 @@ const Dashboard = ({
         {' '}
         Welcome
         {' '}
-        {user && [user.user.role, ' ', user.user.username]}
+        {/* {user && [user.user.role, ' ', user.user.username]} */}
 
       </p>
       {profile !== null ? (

@@ -2,9 +2,9 @@ import React, { Fragment, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createMenteeProfile } from '../../../redux/actions/profile';
+import { handleProfile } from '../../../redux/actions/profile';
 
-const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
+const CreateMenteeProfile = ({ handleProfile, history }) => {
   const [formData, setformData] = useState({
     fullName: '',
     age: '',
@@ -42,7 +42,7 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createMenteeProfile(formData, history);
+    handleProfile(formData, history);
   };
 
   return (
@@ -148,8 +148,8 @@ const CreateMenteeProfile = ({ createMenteeProfile, history }) => {
   );
 };
 CreateMenteeProfile.propTypes = {
-  createMenteeProfile: PropTypes.func.isRequired,
+  handleProfile: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
 };
 
-export default connect(null, { createMenteeProfile })(withRouter(CreateMenteeProfile));
+export default connect(null, { handleProfile })(withRouter(CreateMenteeProfile));
