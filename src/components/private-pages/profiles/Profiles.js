@@ -15,7 +15,6 @@ const Profiles = ({
 
   return (
     <>
-    aaaaaaaa
       {
         loading ? <Spinner /> : (
           <>
@@ -23,19 +22,20 @@ const Profiles = ({
             <p className="lead">
               <i className="fab fa-users" />
               {' '}
-See who else is in this amazing community, and connect
+  See who else is in this amazing community, and connect
             </p>
             <div className="profiles">
-              {profiles.length > 0 ? profiles(
+              {profiles.length > 0 ? (
                 profiles.map((profile) => (
                   <ProfileItems key={profile._id} profile={profile} />
-                )),
+                ))
               ) : <h4>No profiles found</h4>}
             </div>
           </>
         )
       }
     </>
+
   );
 };
 

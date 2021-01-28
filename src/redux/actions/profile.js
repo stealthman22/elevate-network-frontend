@@ -23,9 +23,10 @@ const getCurrentProfile = () => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        status: error.response.status,
         msg: error.response.statusText,
+        status: error.response.status,
       },
+
     });
   }
 };
@@ -46,9 +47,10 @@ const getProfiles = () => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        status: error.response.status,
         msg: error.response.statusText,
+        status: error.response.status,
       },
+
     });
   }
 };
@@ -66,14 +68,14 @@ const getProfileById = (userId) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        status: error.response.status,
         msg: error.response.statusText,
+        status: error.response.status,
       },
     });
   }
 };
 
-// Create or update a mentee profile
+// Create or update a profile
 const handleProfile = (formData, history, edit = false) => async (dispatch) => {
   try {
     const config = {
@@ -105,8 +107,8 @@ const handleProfile = (formData, history, edit = false) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        status: err.response.status,
         msg: err.response.statusText,
+        status: err.response.status,
       },
     });
   }
@@ -178,7 +180,6 @@ const addEdu = (formData, history) => async (dispatch) => {
       payload: {
         msg: err.response.statusText,
         status: err.response.status,
-
       },
     });
   }
@@ -201,7 +202,6 @@ const deleteExp = (id) => async (dispatch) => {
       payload: {
         msg: err.response.statusText,
         status: err.response.status,
-
       },
     });
   }

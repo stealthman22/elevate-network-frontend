@@ -63,5 +63,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     // index as key of array
     'react/no-array-index-key': 'off',
+    // unused varaibles needed for testing
+    'no-unused-vars': 'warn',
+    // inner props declarations can get confusing
+    'react/prop-types': 'warn',
   },
 };
