@@ -7,6 +7,7 @@ import { getMentorProfileById } from '../../../redux/actions/profile';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileExp from './ProfileExp';
+import ProfileEdu from './ProfileEdu';
 
 const MentorProfile = ({
   getMentorProfileById,
@@ -41,6 +42,16 @@ const MentorProfile = ({
                   ))}
                 </>
               ) : (<h4>No Experience Credentials </h4>)}
+              <div className="profile-edu bg-white p-2">
+                <h2 className="text-primary">Education</h2>
+                {profile.education && profile.education.length > 0 ? (
+                  <>
+                    {profile.education.map((education) => (
+                      <ProfileEdu key={education._id} education={education} />
+                    ))}
+                  </>
+                ) : (<h4>No Education Credentials </h4>)}
+              </div>
             </div>
           </div>
         </>

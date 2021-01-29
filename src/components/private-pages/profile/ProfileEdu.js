@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import formatDate from '../../../utils/formatDate';
 
-const ProfileExp = ({
-  experience: {
-    company, title, location, from, to, description,
+const ProfileEdu = ({
+  education: {
+    school, degree, fieldOfStudy,
+    location, from, to, description,
   },
 }) => (
   <div>
-    <h3 className="text-dark">{company}</h3>
+    <h3 className="text-dark">{school}</h3>
     <h4 className="text-dark">{location}</h4>
     <p>
       {' '}
@@ -19,12 +20,17 @@ const ProfileExp = ({
       {to ? formatDate(to) : 'Now'}
     </p>
     <p>
-      <strong>Position</strong>
+      <strong>Degree </strong>
       {' '}
       {' '}
-      {title}
+      {degree}
     </p>
-
+    <p>
+      <strong>Field of Study</strong>
+      {' '}
+      {' '}
+      {fieldOfStudy}
+    </p>
     <p>
       <strong>Description</strong>
       {' '}
@@ -34,8 +40,8 @@ const ProfileExp = ({
   </div>
 );
 
-ProfileExp.propTypes = {
-  experience: PropTypes.shape([]).isRequired,
+ProfileEdu.propTypes = {
+  education: PropTypes.shape([]).isRequired,
 };
 
-export default ProfileExp;
+export default ProfileEdu;
