@@ -9,10 +9,10 @@ import {
   ACCOUNT_DELETED,
 } from '../actions/types';
 
-// inistate is the value of token in localstorage
+// initial state is the value of token in local storage
 const initialState = {
   token: localStorage.getItem('token'),
-  isAuthenticated: null,
+  isAuthenticated: false,
   loading: true,
   user: null,
 };

@@ -14,7 +14,9 @@ const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
   profile: { profile, loading },
-  auth: { user },
+  auth: {
+    user,
+  },
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -37,7 +39,7 @@ const Dashboard = ({
         {' '}
         Welcome
         {' '}
-        {user && [user.user.role, ' ', user.user.username]}
+        {user.user ? [user.user.role, ' ', user.user.username] : ' '}
 
       </p>
       {profile !== null ? (

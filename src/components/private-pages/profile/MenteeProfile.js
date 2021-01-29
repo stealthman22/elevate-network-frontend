@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../../elements/Spinner';
 import { getMenteeProfileById } from '../../../redux/actions/profile';
+import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
 
 const MentorProfile = ({
   getMenteeProfileById,
@@ -16,19 +18,23 @@ const MentorProfile = ({
 }) => {
   useEffect(() => {
     getMenteeProfileById(match.params.id);
-  }, [getMenteeProfileById]);
+  }, [getMenteeProfileById], match.params.id);
 
   return (
     <>
       {loading ? <Spinner /> : (
         <>
-      I got the profile
+          <p>
+            {' '}
+            <Link to="/mentee-profiles" className="btn btn-light"> Back to profiles</Link>
+          </p>
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+
+          </div>
         </>
       ) }
-      <p>
-        {' '}
-        <Link to="/mentee-profiles" className="btn btn-light"> Back to profiles</Link>
-      </p>
     </>
 
   );
@@ -38,7 +44,7 @@ MentorProfile.propTypes = {
   getMenteeProfileById: PropTypes.func.isRequired,
   profile: PropTypes.shape({}).isRequired,
   auth: PropTypes.shape({}).isRequired,
-  user: PropTypes.shape({}).isRequired,
+
 };
 
 const mapStateToProps = (state) => ({

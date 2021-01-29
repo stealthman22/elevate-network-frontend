@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../../elements/Spinner';
 import { getMentorProfileById } from '../../../redux/actions/profile';
+import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
+import ProfileExp from './ProfileExp';
 
 const MentorProfile = ({
   getMentorProfileById,
@@ -16,19 +19,33 @@ const MentorProfile = ({
 }) => {
   useEffect(() => {
     getMentorProfileById(match.params.id);
-  }, [getMentorProfileById]);
+  }, [getMentorProfileById, match.params.id]);
 
   return (
     <>
       {loading ? <Spinner /> : (
         <>
-I got the profile
+          <p>
+            {' '}
+            <Link to="/mentor-profiles" className="btn btn-light"> Back to profiles</Link>
+          </p>
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+            <div className="profile-exp bg-white p-2">
+              <h2 className="text-primary">Experience</h2>
+              {profile.experience && profile.experience.length > 0 ? (
+                <>
+                  {profile.experience.map((experience) => (
+                    <ProfileExp key={experience._id} experience={experience} />
+                  ))}
+                </>
+              ) : (<h4>No Experience Credentials </h4>)}
+            </div>
+          </div>
         </>
       ) }
-      <p>
-        {' '}
-        <Link to="/mentor-profiles" className="btn btn-light"> Back to profiles</Link>
-      </p>
+
       {/* {auth.isAuthenticated
       && auth.loading === false
       && auth.user.user._id === profile.user._id
@@ -40,7 +57,9 @@ I got the profile
           <span>Edit Profile</span>
         </Link>
       )} */}
+
     </>
+
   );
 };
 

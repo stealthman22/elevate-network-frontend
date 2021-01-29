@@ -13,7 +13,7 @@ const ListExp = ({ experience, deleteExp }) => {
         <td>
           {formatDate(exp.from)}
           {' '}
--
+          <span>-</span>
           {' '}
           {exp.to ? formatDate(exp.to) : 'Now'}
         </td>

@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../../elements/Spinner';
 import { getPartnerProfileById } from '../../../redux/actions/profile';
+import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
+import ProfileExp from './ProfileExp';
 
 const PartnerProfile = ({
   getPartnerProfileById,
@@ -16,19 +19,33 @@ const PartnerProfile = ({
 }) => {
   useEffect(() => {
     getPartnerProfileById(match.params.id);
-  }, [getPartnerProfileById]);
+  }, [getPartnerProfileById, match.params.id]);
 
   return (
     <>
       {loading ? <Spinner /> : (
         <>
-   I got the profile
+          <p>
+            {' '}
+            <Link to="/partner-profiles" className="btn btn-light"> Back to profiles</Link>
+          </p>
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+            <div className="profile-exp bg-white p-2">
+              <h2 className="text-primary">Experience</h2>
+              {profile.experience && profile.experience.length > 0 ? (
+                <>
+                  {profile.experience.map((experience) => (
+                    <ProfileExp key={experience._id} experience={experience} />
+                  ))}
+                </>
+              ) : (<h4>No Experience Credentials </h4>)}
+            </div>
+          </div>
         </>
       ) }
-      <p>
-        {' '}
-        <Link to="/partner-profiles" className="btn btn-light"> Back to profiles</Link>
-      </p>
+
     </>
 
   );
