@@ -20,18 +20,27 @@ const MentorProfile = ({
 
   return (
     <>
-      {loading ? <Spinner /> : profile !== null ? (
+      {loading ? <Spinner /> : (
         <>
-      I got the profile
+I got the profile
         </>
-      ) : (
-        <>
-Aww crap something went wrong
-        </>
-      )}
-
+      ) }
+      <p>
+        {' '}
+        <Link to="/mentor-profiles" className="btn btn-light"> Back to profiles</Link>
+      </p>
+      {/* {auth.isAuthenticated
+      && auth.loading === false
+      && auth.user.user._id === profile.user._id
+      && (
+        <Link
+          to="/edit-profile"
+          className="btn btn-dark"
+        >
+          <span>Edit Profile</span>
+        </Link>
+      )} */}
     </>
-
   );
 };
 
@@ -39,7 +48,6 @@ MentorProfile.propTypes = {
   getMentorProfileById: PropTypes.func.isRequired,
   profile: PropTypes.shape({}).isRequired,
   auth: PropTypes.shape({}).isRequired,
-  user: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = (state) => ({

@@ -18,7 +18,7 @@ const MentorProfiles = ({
       {
         loading ? <Spinner /> : (
           <>
-            <h1 className="large text-primary">Profiles</h1>
+            <h1 className="large text-primary"> Mentor Profiles</h1>
             <p className="lead">
               <i className="fab fa-users" />
               {' '}

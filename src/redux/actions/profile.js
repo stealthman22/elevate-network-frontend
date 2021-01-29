@@ -33,12 +33,8 @@ const getCurrentProfile = () => async (dispatch) => {
 
 // Get mentee profile by id
 const getMenteeProfileById = (userId) => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get(`/api/profile/mentee-user/${userId}`);
-    console.log(res);
 
     dispatch({
       type: GET_PROFILE,
@@ -55,14 +51,10 @@ const getMenteeProfileById = (userId) => async (dispatch) => {
   }
 };
 
-// Get mentee profile by id
+// Get mentor profile by id
 const getMentorProfileById = (userId) => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get(`/api/profile/mentor-user/${userId}`);
-    console.log(res);
 
     dispatch({
       type: GET_PROFILE,
@@ -81,12 +73,8 @@ const getMentorProfileById = (userId) => async (dispatch) => {
 
 // Get mentee profile by id
 const getPartnerProfileById = (userId) => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get(`/api/profile/partner-user/${userId}`);
-    console.log(res);
 
     dispatch({
       type: GET_PROFILE,
@@ -105,9 +93,6 @@ const getPartnerProfileById = (userId) => async (dispatch) => {
 
 // Get all  partner Profiles
 const getPartnerProfiles = () => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get('/api/profile/partner-profiles');
 
@@ -129,9 +114,6 @@ const getPartnerProfiles = () => async (dispatch) => {
 
 // Get all  mentor Profiles
 const getMentorProfiles = () => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get('/api/profile/mentor-profiles');
 
@@ -153,9 +135,6 @@ const getMentorProfiles = () => async (dispatch) => {
 
 // Get all  mentor Profiles
 const getMenteeProfiles = () => async (dispatch) => {
-  dispatch({
-    type: CLEAR_PROFILE,
-  });
   try {
     const res = await axios.get('/api/profile/mentee-profiles');
 

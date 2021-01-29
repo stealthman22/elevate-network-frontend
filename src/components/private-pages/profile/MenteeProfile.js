@@ -20,16 +20,15 @@ const MentorProfile = ({
 
   return (
     <>
-      {loading ? <Spinner /> : profile !== null ? (
+      {loading ? <Spinner /> : (
         <>
       I got the profile
         </>
-      ) : (
-        <>
-Aww crap something went wrong
-        </>
-      )}
-
+      ) }
+      <p>
+        {' '}
+        <Link to="/mentee-profiles" className="btn btn-light"> Back to profiles</Link>
+      </p>
     </>
 
   );
