@@ -27,19 +27,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 'off',
     // PROP SHADOW ERROR IN ESLINT
-    'no-shadow': [
-      'error',
-      {
-        // setAlert, register, at register component
-        // login at login component
-        //  alerts at ?
-
-        allow: ['setAlert', 'register', 'login',
-          'alerts', 'logout', 'getCurrentProfile',
-          'handleProfile', 'addExp', 'addEdu', 'deleteExp', 'deleteEdu', 'deleteAccount', 'getProfiles',
-          'getProfileById'],
-      },
-    ],
+    'no-shadow': 'warn',
     // Disable Prefer destructuring on arrays
     // 'prefer-destructuring': ['error', { object: false, array: false }],
 

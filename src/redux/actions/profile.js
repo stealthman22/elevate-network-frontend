@@ -31,13 +31,61 @@ const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-// Get all Profiles
-const getProfiles = () => async (dispatch) => {
+// Get all  partner Profiles
+const getPartnerProfiles = () => async (dispatch) => {
   dispatch({
     type: CLEAR_PROFILE,
   });
   try {
-    const res = await axios.get('/api/profile');
+    const res = await axios.get('/api/profile/partner-profiles');
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status,
+      },
+
+    });
+  }
+};
+
+// Get all  mentor Profiles
+const getMentorProfiles = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+  try {
+    const res = await axios.get('/api/profile/mentor-profiles');
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status,
+      },
+
+    });
+  }
+};
+
+// Get all  mentor Profiles
+const getMenteeProfiles = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+  try {
+    const res = await axios.get('/api/profile/mentee-profiles');
 
     dispatch({
       type: GET_PROFILES,
@@ -261,6 +309,8 @@ export {
   deleteExp,
   deleteEdu,
   deleteAccount,
-  getProfiles,
+  getPartnerProfiles,
+  getMenteeProfiles,
+  getMentorProfiles,
   getProfileById,
 };
