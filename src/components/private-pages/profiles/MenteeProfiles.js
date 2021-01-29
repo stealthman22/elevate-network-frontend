@@ -3,26 +3,26 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../../elements/Spinner';
 import ProfileItems from './ProfileItems';
-import { getPartnerProfiles } from '../../../redux/actions/profile';
+import { getMenteeProfiles } from '../../../redux/actions/profile';
 
-const Profiles = ({
-  getPartnerProfiles,
+const MenteeProfiles = ({
+  getMenteeProfiles,
   profile: { profiles, loading },
 }) => {
   useEffect(() => {
-    getPartnerProfiles();
-  }, [getPartnerProfiles]);
+    getMenteeProfiles();
+  }, [getMenteeProfiles]);
 
   return (
     <>
       {
         loading ? <Spinner /> : (
           <>
-            <h1 className="large text-primary">Profiles</h1>
+            <h1 className="large text-primary">Mentee Profiles</h1>
             <p className="lead">
               <i className="fab fa-users" />
               {' '}
-  See who else is in this amazing community, and connect
+              <span> See the Mentees in this amazing community, and connect</span>
             </p>
             <div className="profiles">
               {profiles.length > 0 ? (
@@ -39,8 +39,8 @@ const Profiles = ({
   );
 };
 
-Profiles.propTypes = {
-  getPartnerProfiles: PropTypes.func.isRequired,
+MenteeProfiles.propTypes = {
+  getMenteeProfiles: PropTypes.func.isRequired,
   profile: PropTypes.shape({
     loading: PropTypes.bool,
     profiles: PropTypes.shape([]),
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getPartnerProfiles })(Profiles);
+export default connect(mapStateToProps, { getMenteeProfiles })(MenteeProfiles);

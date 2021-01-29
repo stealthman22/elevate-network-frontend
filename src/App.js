@@ -23,7 +23,9 @@ import AddExp from './components/private-pages/profile-forms/AddExp';
 import AddEdu from './components/private-pages/profile-forms/AddEdu';
 // import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
-import Profiles from './components/private-pages/profiles/Profiles';
+import PartnerProfiles from './components/private-pages/profiles/PartnerProfiles';
+import MentorProfiles from './components/private-pages/profiles/MentorProfiles';
+import MenteeProfiles from './components/private-pages/profiles/MenteeProfiles';
 import './App.css';
 
 // For Redux
@@ -56,7 +58,9 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/profiles" component={Profiles} />
+            <PrivateRoute exact path="/partner-profiles" component={PartnerProfiles} />
+            <PrivateRoute exact path="/mentor-profiles" component={MentorProfiles} />
+            <PrivateRoute exact path="/mentee-profiles" component={MenteeProfiles} />
             <PrivateRoute exact path="/create-mentee-profile" component={CreateMenteeProfile} />
             <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
             <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
