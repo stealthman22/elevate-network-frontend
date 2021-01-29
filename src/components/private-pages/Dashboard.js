@@ -18,7 +18,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   // const onClick = () => {
   //   if (user.user.role === 'Mentee') {

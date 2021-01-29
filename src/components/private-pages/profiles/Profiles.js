@@ -11,7 +11,7 @@ const Profiles = ({
 }) => {
   useEffect(() => {
     getPartnerProfiles();
-  }, []);
+  }, [getPartnerProfiles]);
 
   return (
     <>
@@ -42,8 +42,8 @@ const Profiles = ({
 Profiles.propTypes = {
   getPartnerProfiles: PropTypes.func.isRequired,
   profile: PropTypes.shape({
+    loading: PropTypes.bool,
     profiles: PropTypes.shape([]),
-    loading: PropTypes.func,
   }).isRequired,
 };
 

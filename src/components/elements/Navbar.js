@@ -65,7 +65,7 @@ Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     isAuthenticated: PropTypes.bool,
-    loading: PropTypes.func,
+    loading: PropTypes.bool,
   }).isRequired,
 };
 

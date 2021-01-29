@@ -17,7 +17,7 @@ const Alert = ({ alerts }) => alerts !== null
  ));
 
 Alert.propTypes = {
-  alert: PropTypes.shape([]).isRequired,
+  alert: PropTypes.shape([]),
 };
 // map redux state so we have access to it
 const mapStateToProps = (state) => ({
