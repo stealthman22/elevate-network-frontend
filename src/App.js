@@ -62,7 +62,8 @@ const App = () => {
             <PrivateRoute exact path="/partner-profiles" component={PartnerProfiles} />
             <PrivateRoute exact path="/mentor-profiles" component={MentorProfiles} />
             <PrivateRoute exact path="/mentee-profiles" component={MenteeProfiles} />
-            <PrivateRoute exact path="/profile/:id" component={Profile} />
+            <PrivateRoute exact path="/mentee-profile/:id" component={Profile} />
+
             <PrivateRoute exact path="/create-mentee-profile" component={CreateMenteeProfile} />
             <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
             <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />

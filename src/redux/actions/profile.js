@@ -31,13 +31,61 @@ const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-// Get profile by id
-const getProfileById = (userId) => async (dispatch) => {
+// Get mentee profile by id
+const getMenteeProfileById = (userId) => async (dispatch) => {
   dispatch({
     type: CLEAR_PROFILE,
   });
   try {
-    const res = await axios.get(`/api/profile/user/${userId}`);
+    const res = await axios.get(`/api/profile/mentee-user/${userId}`);
+    console.log(res);
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
+// Get mentee profile by id
+const getMentorProfileById = (userId) => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+  try {
+    const res = await axios.get(`/api/profile/mentor-user/${userId}`);
+    console.log(res);
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
+// Get mentee profile by id
+const getPartnerProfileById = (userId) => async (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+  try {
+    const res = await axios.get(`/api/profile/partner-user/${userId}`);
     console.log(res);
 
     dispatch({
@@ -316,5 +364,7 @@ export {
   getPartnerProfiles,
   getMenteeProfiles,
   getMentorProfiles,
-  getProfileById,
+  getMenteeProfileById,
+  getMentorProfileById,
+  getPartnerProfileById,
 };

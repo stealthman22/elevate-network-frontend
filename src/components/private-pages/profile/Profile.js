@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../../elements/Spinner';
-import { getProfileById } from '../../../redux/actions/profile';
+import { getMenteeProfileById, getMentorProfileById, getPartnerProfileById } from '../../../redux/actions/profile';
 
 const Profile = ({
-  getProfileById,
+  getMenteeProfileById,
+  // getPartnerProfileById,
+  // getMentorProfileById,
   profile: {
     profile,
     loading,
@@ -15,25 +17,22 @@ const Profile = ({
   match,
 }) => {
   useEffect(() => {
-    getProfileById(match.params.id);
-  }, [getProfileById]);
+    getMenteeProfileById(match.params.id);
+    // getMentorProfileById(match.params.id);
+    // getPartnerProfileById(match.params.id);
+  }, [getMenteeProfileById]);
 
   return (
     <>
-      {loading ? (
-        <Spinner />
-
-      ) : profile !== null ? (
+      {loading ? <Spinner /> : profile !== null ? (
         <>
-        GOT PROFILE
-
+      I got the profile
         </>
       ) : (
         <>
-          <p>Aww crap can&apos;t find that!</p>
-
+Aww crap something went wrong
         </>
-      ) }
+      )}
 
     </>
 
@@ -41,7 +40,9 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  getProfileById: PropTypes.func.isRequired,
+  getMenteeProfileById: PropTypes.func.isRequired,
+  // getMentorProfileById: PropTypes.func.isRequired,
+  // getPartnerProfileById: PropTypes.func.isRequired,
   profile: PropTypes.shape({}).isRequired,
   auth: PropTypes.shape({}).isRequired,
   user: PropTypes.shape({}).isRequired,
@@ -52,4 +53,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getProfileById })(Profile);
+export default connect(mapStateToProps, { getMenteeProfileById })(Profile);
