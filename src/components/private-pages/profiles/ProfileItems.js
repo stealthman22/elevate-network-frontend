@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
 
 //  change prop role to avatar
 const ProfileItems = ({
@@ -31,9 +32,24 @@ const ProfileItems = ({
         </h2>
         <p>{aboutMe}</p>
         <p className="my-1">{location && <span>{location}</span>}</p>
-        <Link to={`mentee-profile/${_id}`} className="btn btn-primary">
+        {role === 'Mentee' ? (
+          <>
+            <Link to={`mentee-profile/${_id}`} className="btn btn-primary">
     View Profile
-        </Link>
+            </Link>
+          </>
+        ) : role === 'Mentor' ? (
+          <>
+            <Link to={`mentor-profile/${_id}`} className="btn btn-primary">
+    View Profile
+            </Link>
+          </>
+        ) : (
+          <Link to={`partner-profile/${_id}`} className="btn btn-primary">
+    View Profile
+          </Link>
+        )}
+
       </div>
       <ul>
         { skills && skills.slice(0, 3).map((skill, index) => (
@@ -53,4 +69,10 @@ ProfileItems.propTypes = {
     interests: PropTypes.shape({}),
   }).isRequired,
 };
+
+// const mapStateToProps = (state) => ({
+//   profile: state.profile,
+// });
+
+// export default connect(mapStateToProps)(ProfileItems);
 export default ProfileItems;
