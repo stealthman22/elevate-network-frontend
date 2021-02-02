@@ -35,12 +35,14 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <>
-      <h1 className="large text-primary">LOG IN</h1>
-      <p className="lead">
-        <i className="fas fa-user" />
-        {' '}
+      <div className="container">
+        <h1 className="large text-primary">LOG IN</h1>
+        <p className="lead">
+          <i className="fas fa-user" />
+          {' '}
         Log into Your Account
-      </p>
+        </p>
+      </div>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input

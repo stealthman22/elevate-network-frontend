@@ -10,29 +10,30 @@ const ListExp = ({ experience, deleteExp }) => {
       <tr key={exp._id}>
         <td>{exp.company}</td>
         <td className="hide-sm">{exp.title}</td>
-        <td>
+        <td className="hide-sm">
           {formatDate(exp.from)}
           {' '}
           <span>-</span>
           {' '}
           {exp.to ? formatDate(exp.to) : 'Now'}
         </td>
+        <td>
+          <button type="button" onClick={() => deleteExp(exp._id)} className="btn btn-danger">Delete</button>
+        </td>
       </tr>
-      <td>
-        <button type="button" onClick={() => deleteExp(exp._id)} className="btn btn-danger">Delete</button>
-      </td>
+
     </>
   ));
   return (
     <>
-      <h2 className="my3">Experience Highlights</h2>
+      <h2 className="my-2">Experience Highlights</h2>
       <table className="table">
         <thead>
           <tr>
             <th>Company</th>
             <th className="hide-sm">Title</th>
             <th className="hide-sm">Years</th>
-
+            <th>{' '}</th>
           </tr>
         </thead>
         <tbody>{experiences}</tbody>

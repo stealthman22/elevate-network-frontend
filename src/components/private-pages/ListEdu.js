@@ -8,33 +8,32 @@ const ListEdu = ({ education, deleteEdu }) => {
   const educations = education.map((edu) => (
     <>
       <tr key={edu._id}>
-        <td>{edu.school}</td>
-        <td className="hide-sm">{edu.degree}</td>
-        <td className="hide-sm">{edu.fieldOfStudy}</td>
-        <td>
+        <td>{edu.fieldOfStudy}</td>
+        <td className="hide-sm">{edu.school}</td>
+        <td className="hide-sm">
           {formatDate(edu.from)}
           {' '}
--
+          <span>-</span>
           {' '}
           {edu.to ? formatDate(edu.to) : 'Now'}
         </td>
+        <td>
+          <button onClick={() => deleteEdu(edu._id)} type="button" className="btn btn-danger">Delete</button>
+        </td>
       </tr>
-      <td>
-        <button onClick={() => deleteEdu(edu._id)} type="button" className="btn btn-danger">Delete</button>
-      </td>
+
     </>
   ));
   return (
     <>
-      <h2 className="my3">Education Highlights</h2>
+      <h2 className="my-2">Education Highlights</h2>
       <table className="table">
         <thead>
           <tr>
-            <th>Institution</th>
-            <th className="hide-sm">Degree</th>
-            <th className="hide-sm">Field of Study</th>
+            <th>Field Of Study</th>
+            <th className="hide-sm"> School</th>
             <th className="hide-sm">Years</th>
-
+            <th>{' '}</th>
           </tr>
         </thead>
         <tbody>{educations}</tbody>

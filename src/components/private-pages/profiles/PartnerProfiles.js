@@ -18,20 +18,23 @@ const PartnerProfiles = ({
       {
         loading ? <Spinner /> : (
           <>
-            <h1 className="large text-primary"> Partner Profiles</h1>
-            <p className="lead">
-              <i className="fab fa-users" />
-              {' '}
-              <span> See the Partners in this amazing community, and connect</span>
-            </p>
-            <div className="profiles">
-              {profiles.length > 0 ? (
-                profiles.map((profile) => (
-                  <ProfileItems key={profile._id} profile={profile} />
-                ))
-              ) : <h4>No profiles found</h4>}
+            <div className="container">
+              <h1 className="large text-primary"> Partner Profiles</h1>
+              <p className="lead">
+                <i className="fab fa-users" />
+                {' '}
+                <span> See the Partners in this amazing community, and connect</span>
+              </p>
+              <div className="profiles">
+                {profiles.length > 0 ? (
+                  profiles.map((profile) => (
+                    <ProfileItems key={profile._id} profile={profile} />
+                  ))
+                ) : <h4>No profiles found</h4>}
+              </div>
             </div>
           </>
+
         )
       }
     </>

@@ -32,17 +32,19 @@ const AddEdu = ({ addExp, history }) => {
 
   return (
     <>
-      <h1 className="large text-primary">
+      <div className="container">
+        <h1 className="large text-primary">
        Add An Experience
-      </h1>
-      <p className="lead">
-        <i className="fas fa-briefcase" />
-        {' '}
+        </h1>
+        <p className="lead">
+          <i className="fas fa-briefcase" />
+          {' '}
         Add any work Experience you&apos;ve had in the past,
         volunteering also counts.
 
-      </p>
-      <small>* = required field</small>
+        </p>
+        <small>* = required field</small>
+      </div>
       <form
         className="form"
         onSubmit={(e) => {

@@ -34,16 +34,18 @@ const AddEdu = ({ addEdu, history }) => {
 
   return (
     <>
-      <h1 className="large text-primary">
+      <div className="container">
+        <h1 className="large text-primary">
        Add Your Education
-      </h1>
-      <p className="lead">
-        <i className="fas fa-user-graduate" />
-        {' '}
+        </h1>
+        <p className="lead">
+          <i className="fas fa-user-graduate" />
+          {' '}
         Add any School or Certification course you&apos;ve attended in the past,
 
-      </p>
-      <small>* = required field</small>
+        </p>
+        <small>* = required field</small>
+      </div>
       <form
         className="form"
         onSubmit={(e) => {
@@ -107,6 +109,7 @@ Current Institution
         <input type="submit" className="btn btn-primary my-1" />
         <Link to="/dashboard" className="btn btn-light my-1">Go Back</Link>
       </form>
+
     </>
   );
 };

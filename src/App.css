@@ -20,7 +20,7 @@ body {
   background-color: #fff;
   color: #333;
 
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 a {
@@ -32,18 +32,35 @@ ul {
   list-style: none;
 }
 
+/* Check if it aligns properly */
 img {
   width: 100%;
 }
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Dashboard */
+.dashboard-ctn {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 1.3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+}
+
+.wrapper-ctn {
+  padding: 1rem;
 }
 
 /* Text Styles*/
@@ -135,8 +152,9 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin-right: 0.7rem;
   transition: opacity 0.2s ease-in;
   outline: none;
 }
@@ -209,7 +227,7 @@ img {
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .bg-light,
@@ -239,7 +257,8 @@ img {
 
 /* Forms */
 .form .form-group {
-  margin: 1.2rem 0;
+  margin: 1rem auto;
+  padding: 0.5rem;
   
 }
 
@@ -256,8 +275,8 @@ img {
 .form select,
 .form textarea {
   display: block;
-  width: 100%;
-  padding: 0.4rem;
+  width: 70%;
+  padding: 0.6rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
@@ -287,7 +306,7 @@ button {
   color: #3b5998;
 }
 .form .social-input i.fa-instagram {
-  color: #3f729b;
+  color: #DD2a7b;
 }
 .form .social-input i.fa-youtube {
   color: #c4302b;
@@ -357,6 +376,8 @@ button {
   text-align: center;
 }
 
+
+
 /* Profiles Page */
 .profile {
   display: grid;
@@ -376,7 +397,7 @@ button {
     'about about'
     'exp edu'
     'github github';
-  grid-gap: 1rem;
+  grid-gap: 1.3rem;
 }
 
 .profile-top {
@@ -395,10 +416,12 @@ button {
 .profile-top .icons a {
   color: #fff;
   margin: 0 0.3rem;
+  padding: 0.2rem;
 }
 
 .profile-top .icons a:hover {
-  color: var(--dark-color);
+  transition :  color 0.25s ease-in ;
+  color : var(--dark-color)
 }
 
 .profile-about {
@@ -502,6 +525,11 @@ button {
     margin-top: 8rem;
   }
 
+  .dashboard-ctn {
+    margin-top: 8rem;
+    
+  }
+
   .hide-sm {
     display: none;
   }
@@ -569,10 +597,13 @@ button {
     flex-direction: column;
   }
 
+  /*  wrapper for the dashboard */
+
+
   .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 0.7rem;
   }
 
   .post {

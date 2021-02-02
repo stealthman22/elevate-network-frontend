@@ -25,22 +25,24 @@ const MentorProfile = ({
     <>
       {loading ? <Spinner /> : (
         <>
-          <p>
-            {' '}
-            <Link to="/mentee-profiles" className="btn btn-light"> Back to profiles</Link>
-          </p>
-          <div className="profile-grid my-1">
-            <ProfileTop profile={profile} />
-            <ProfileAbout profile={profile} />
-            <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Education</h2>
-              {profile.education && profile.education.length > 0 ? (
-                <>
-                  {profile.education.map((education) => (
-                    <ProfileEdu key={education._id} education={education} />
-                  ))}
-                </>
-              ) : (<h4>No Education Credentials </h4>)}
+          <div className="container">
+            <p>
+              {' '}
+              <Link to="/mentee-profiles" className="btn btn-light"> Back to profiles</Link>
+            </p>
+            <div className="profile-grid my-1">
+              <ProfileTop profile={profile} />
+              <ProfileAbout profile={profile} />
+              <div className="profile-exp bg-white p-2">
+                <h2 className="text-primary">Education</h2>
+                {profile.education && profile.education.length > 0 ? (
+                  <>
+                    {profile.education.map((education) => (
+                      <ProfileEdu key={education._id} education={education} />
+                    ))}
+                  </>
+                ) : (<h4>No Education Credentials </h4>)}
+              </div>
             </div>
           </div>
         </>

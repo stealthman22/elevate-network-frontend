@@ -26,22 +26,26 @@ const MentorProfile = ({
     <>
       {loading ? <Spinner /> : (
         <>
-          <p>
+          <div className="container">
             {' '}
-            <Link to="/mentor-profiles" className="btn btn-light"> Back to profiles</Link>
-          </p>
-          <div className="profile-grid my-1">
-            <ProfileTop profile={profile} />
-            <ProfileAbout profile={profile} />
-            <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Experience</h2>
-              {profile.experience && profile.experience.length > 0 ? (
-                <>
-                  {profile.experience.map((experience) => (
-                    <ProfileExp key={experience._id} experience={experience} />
-                  ))}
-                </>
-              ) : (<h4>No Experience Credentials </h4>)}
+            <p>
+              {' '}
+              <Link to="/mentor-profiles" className="btn btn-light"> Back to profiles</Link>
+            </p>
+            <div className="profile-grid my-1">
+              <ProfileTop profile={profile} />
+              <ProfileAbout profile={profile} />
+              <div className="profile-exp bg-white p-2">
+                <h2 className="text-primary">Experience</h2>
+                {profile.experience && profile.experience.length > 0 ? (
+                  <>
+                    {profile.experience.map((experience) => (
+                      <ProfileExp key={experience._id} experience={experience} />
+                    ))}
+                  </>
+                ) : (<h4>No Experience Credentials </h4>)}
+
+              </div>
               <div className="profile-edu bg-white p-2">
                 <h2 className="text-primary">Education</h2>
                 {profile.education && profile.education.length > 0 ? (
@@ -54,6 +58,7 @@ const MentorProfile = ({
               </div>
             </div>
           </div>
+
         </>
       ) }
 
