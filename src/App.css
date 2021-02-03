@@ -362,6 +362,20 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* Logo */
+.logo-ctn {
+  background-color: var(--light-color);
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.9);
+  width: 200px;
+  padding: 0.2rem 1rem 0.2rem 0.1rem;
+}
+
+.logo-ctn:hover {
+  transition: box-shadow 0.2s ease ;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.9);
 }
 
 .navbar ul {
@@ -375,12 +389,36 @@ button {
 }
 
 .navbar a:hover {
+  transition: color 0.2s ease ;
   color: var(--primary-color);
 }
 
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
+
+
+
+
+  /* Navbar
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar h1 {
+    margin-bottom: 1rem;
+  }
+
+  .navbar .welcome {
+    display: none;
+  } */
+
 
 /* Landing Page */
 .landing {
@@ -572,24 +610,7 @@ button {
     font-size: 1rem;
   }
 
-  /* Navbar */
-  .navbar {
-    display: block;
-    text-align: center;
-  }
 
-  .navbar ul {
-    text-align: center;
-    justify-content: center;
-  }
-
-  .navbar h1 {
-    margin-bottom: 1rem;
-  }
-
-  .navbar .welcome {
-    display: none;
-  }
 
   /* Profiles Page */
   .profile {
@@ -705,7 +726,7 @@ justify-content: center;
   background-color: var(--light-color);
   border: 2px solid  var(--light-color);
   box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.8);
-  padding: 0.2rem 2rem;
+  padding: 0.6rem 2rem 0 2rem;
 }
 .reg-ctn .left {
 
@@ -726,6 +747,18 @@ justify-content: center;
     margin-bottom: 0.5rem;
   }
 }
+
+@media (max-width: 365px) {
+  .reg-wrapper {
+    height: 140vh;
+  }
+  .reg-ctn {
+    height: 120vh;
+  }
+
+}
+
+
 
 
 /* @media (prefers-reduced-motion: no-preference) {

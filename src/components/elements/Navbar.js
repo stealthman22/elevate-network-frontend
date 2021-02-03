@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../redux/actions/auth';
+import logo from '../../assets/Elevate Logo.svg';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   //  auth links for registered
@@ -52,13 +53,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <nav className="navbar bg-dark">
-      <h1>
+      <span className="logo-ctn">
         <Link to="/">
-          {/* <i className="fas fa-code" />
-        {' '} */}
-          Elevate Network
+          <img className="logo" src={logo} alt="" />
         </Link>
-      </h1>
+      </span>
       {!loading && (
         <>
           {' '}

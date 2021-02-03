@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Spinner from '../../elements/Spinner';
 import ProfileItems from './ProfileItems';
 import { getMenteeProfiles } from '../../../redux/actions/profile';
-import StyledWrapper from '../../elements/styled/wrapper';
 
 const MenteeProfiles = ({
   getMenteeProfiles,
