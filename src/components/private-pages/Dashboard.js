@@ -7,6 +7,7 @@ import Spinner from '../elements/Spinner';
 import DashboardActions from './DashboardActions';
 import ListExp from './ListExp';
 import ListEdu from './ListEdu';
+// import dashImg from '../../assets/undraw_career_development_oqcb.svg';
 // import CreateMenteeProfile from './profile-forms/CreateMenteeProfile';
 // import CreateMentorProfile from './profile-forms/CreateMentorProfile';
 
@@ -32,46 +33,49 @@ const Dashboard = ({
   return loading && profile === null ? <Spinner /> : (
     <>
       <div className="dashboard-ctn">
-        <h1 className="large text-primary">
+        <h1 className="large text-primary text-center">
         Dashboard
         </h1>
-        <p className="lead">
+        <p className="lead text-center">
           <i className="fa fa-user" />
           {' '}
         Welcome
           {' '}
           {user.user ? [user.user.role, ' ', user.user.username] : ' '}
-
         </p>
         {profile !== null ? (
           user.user.role === 'Mentee' ? (
             <>
+              <div className="dashboard-wrapper">
+                <DashboardActions />
 
-              <DashboardActions />
+                <ListEdu education={profile.education} />
 
-              <ListEdu education={profile.education} />
+                <div className="my-2 ml">
+                  <button onClick={() => deleteAccount()} type="button" className="btn btn-danger">
+                    <i className="fas fa-user-minus" />
+                    {' '}
+                    <span>Delete Account </span>
+                  </button>
+                </div>
 
-              <div className="my-2">
-                <button onClick={() => deleteAccount()} type="button" className="btn btn-danger">
-                  <i className="fas fa-user-minus" />
-
-                  {' '}
-                  <span>Delete Account </span>
-                </button>
               </div>
-
             </>
           ) : (
             <>
-              <DashboardActions />
-              <ListExp experience={profile.experience} />
-              <ListEdu education={profile.education} />
+              <div className="dashboard-wrapper">
+                <DashboardActions />
+                <ListExp experience={profile.experience} />
+                <ListEdu education={profile.education} />
 
-              <div className="my-2">
-                <button onClick={() => deleteAccount} type="button" className="btn btn-danger">
-                  <i className="fas fa-user-minus" />
+                <div className="my-2 ml">
+                  <button onClick={() => deleteAccount} type="button" className="btn btn-danger">
+                    <i className="fas fa-user-minus" />
+                    {' '}
                 Delete Account
-                </button>
+                  </button>
+                </div>
+
               </div>
             </>
           )
@@ -81,25 +85,34 @@ const Dashboard = ({
             user.user.role === 'Mentee'
               ? (
                 <>
-                  <p>You have not yet setup a profile, please add some info</p>
-                  <Link to="/create-mentee-profile" className="btn btn-primary my-1">
+                  <div className="text-center">
+                    <p>You have not yet setup a profile, please add some info</p>
+                    <Link to="/create-mentee-profile" className="btn btn-primary my-1">
                   Create Profile
-                  </Link>
+                    </Link>
+                    <div className="mentee-welcome" />
+                  </div>
                 </>
               ) : user.user.role === 'Partner' ? (
                 <>
-                  <p>You have not yet setup a profile, please add some info</p>
-                  <Link to="/create-partner-profile" className="btn btn-primary my-1">
+                  <div className="text-center">
+                    <p>You have not yet setup a profile, please add some info</p>
+                    <Link to="/create-partner-profile" className="btn btn-primary my-1">
                     Create Profile
-                  </Link>
+                    </Link>
+                    <div className="partner-welcome" />
+                  </div>
                 </>
               )
                 : (
                   <>
-                    <p>You have not yet setup a profile, please add some info</p>
-                    <Link to="/create-mentor-profile" className="btn btn-primary my-1">
+                    <div className="text-center">
+                      <p>You have not yet setup a profile, please add some info</p>
+                      <Link to="/create-mentor-profile" className="btn btn-primary my-1">
                   Create Profile
-                    </Link>
+                      </Link>
+                      <div className="mentor-welcome" />
+                    </div>
                   </>
                 )
           )}
