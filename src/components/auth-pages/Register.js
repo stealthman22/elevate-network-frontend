@@ -44,44 +44,43 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
   return (
     <>
-      <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
-        <i className="fas fa-user" />
-        {' '}
+      <div className="reg-wrapper">
+        <div className="reg-ctn">
+          <h1 className="medium text-primary text-center">Sign Up</h1>
+          <p className="lead text-center">
+            <i className="fas fa-user" />
+            {' '}
         Create Your Account
-      </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <small>
-            Something nice that resonates with you e.g HighFlyer
-          </small>
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            value={username}
-            onChange={(e) => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email. Check FAQ page for instructions.
-          </small>
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-          />
+          </p>
+          <form className="form" onSubmit={(e) => onSubmit(e)}>
+            <div className="form-group">
 
-        </div>
-        <div className="form-group">
-          <small className="form-text">
-            Please select how you want to be registered; mentee, mentor and partner
-          </small>
-          {/* <input
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={username}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="form-group">
+              <small className="form-text">
+            please use a Gravatar email. Check FAQ page for instructions.
+              </small>
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                value={email}
+                onChange={(e) => onChange(e)}
+              />
+
+            </div>
+            <div className="form-group">
+              <small className="form-text">
+            Register as either mentee, mentor or partner
+              </small>
+              {/* <input
             type="text"
             placeholder="Mentee, Mentor or Partner"
             name="role"
@@ -90,45 +89,48 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             id="role"
           /> */}
 
-          <select
-            name="role"
-            onChange={(e) => onChange(e)}
-            id="role"
-          >
-            <option value="0">---Select an option below---</option>
-            <option value="Mentee">Mentee</option>
-            <option value="Mentor">Mentor</option>
-            <option value="Partner">Partner</option>
-          </select>
+              <select
+                name="role"
+                onChange={(e) => onChange(e)}
+                id="role"
+              >
+                <option value="0">---Select an option below---</option>
+                <option value="Mentee">Mentee</option>
+                <option value="Mentor">Mentor</option>
+                <option value="Partner">Partner</option>
+              </select>
+
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={(e) => onChange(e)}
+                minLength="8"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="password2"
+                value={password2}
+                onChange={(e) => onChange(e)}
+                minLength="8"
+              />
+            </div>
+            <input type="submit" className="btn btn-primary ml" value="Register" />
+          </form>
+          <p className="py-1 text-center">
+            <span>Already have an account? </span>
+
+            <Link to="/login">Sign In</Link>
+          </p>
 
         </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={(e) => onChange(e)}
-            minLength="8"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            value={password2}
-            onChange={(e) => onChange(e)}
-            minLength="8"
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
-      </form>
-      <p className="my-1">
-        Already have an account?
-        {' '}
-        <Link to="/login">Sign In</Link>
-      </p>
+      </div>
     </>
   );
 };
