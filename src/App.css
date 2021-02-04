@@ -51,6 +51,20 @@ img {
 }
 
 
+/* Hero SLider */
+
+.slider-ctn {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: black;
+
+}
+
+
+
 
 /* Dashboard */
 .dashboard-ctn {

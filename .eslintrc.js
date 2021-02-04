@@ -55,5 +55,6 @@ module.exports = {
     'no-unused-vars': 'warn',
     // inner props declarations can get confusing
     'react/prop-types': 'warn',
+    'jsx-a11y/control-has-associated-label': 'off',
   },
 };
