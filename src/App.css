@@ -5,6 +5,8 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.50s;
 }
 
 * {
@@ -49,6 +51,20 @@ img {
 }
 
 
+/* Hero SLider */
+
+.hero-ctn {
+height: 100vh ;
+  
+}
+
+
+.slide-img{
+} 
+
+.slide-content {
+  z-index: 9;
+}
 
 /* Dashboard */
 .dashboard-ctn {
@@ -182,8 +198,12 @@ img {
 }
 
 .alert {
+position: fixed;
+left: 0;
+width: 100%;
+transition: position 0.4s ease;
   padding: 0.5rem;
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   opacity: 0.9;
   background: var(--light-color);
 
@@ -260,7 +280,7 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 0;
   left: 0;
@@ -350,27 +370,18 @@ button {
   background: var(--light-color);
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
-}
+
 
 /* Logo */
 .logo-ctn {
+  z-index: 10 ;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: var(--light-color);
   box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.9);
-  width: 200px;
   padding: 0.2rem 1rem 0.2rem 0.1rem;
+  width: 200px;
 }
 
 .logo-ctn:hover {
@@ -401,6 +412,21 @@ button {
 
 
   /* Navbar
+/* Navbar */
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px var(--primary-color);
+  opacity: 0.9;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
   .navbar {
     display: block;
     text-align: center;
@@ -437,7 +463,7 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+} */
 
 
 
@@ -721,19 +747,45 @@ justify-content: center;
 
 .reg-ctn {
   width: 85vw;
-  height: 85vh;
+  min-height: 85vh;
   margin: 4rem  auto 0 auto  ;
   background-color: var(--light-color);
   border: 2px solid  var(--light-color);
   box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.8);
   padding: 0.6rem 2rem 0 2rem;
 }
-.reg-ctn .left {
 
+.dashboard-wrapper {
+  width: 60vw;
+  min-height: 50vh;
+  margin: 1rem  auto 1rem auto  ;
+  background-color: var(--light-color);
+  border: 2px solid  var(--light-color);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.9);
+  padding: 1rem
 }
 
-.reg-ctn .right {
 
+/* Welcome images div for newly registered */
+
+.mentee-welcome {
+  height: 60vh;
+  background: url('./assets/undraw_team_spirit_hrr4.svg') no-repeat center center / contain ;
+}
+
+.mentor-welcome {
+  height: 60vh;
+  background: url('./assets/undraw_teaching_f1cm.svg') no-repeat center center / contain ;
+}
+.partner-welcome {
+  height: 60vh;
+  background: url('./assets/undraw_businesswoman_pc12.svg') no-repeat center center / contain ;
+}
+
+@media (max-width: 700px) {
+  .dashboard-wrappper {
+    width: 80vw;
+  }
 }
 
 @media (max-width: 700px) {
@@ -761,8 +813,185 @@ justify-content: center;
 
 
 
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+} */
+
+
+/* Navbar */
+/* MENU STYLES */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--dark-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.9);
+}
+
+.menu-wrap .hamburger:hover {
+  transition: box-shadow 0.2s ease ;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 130vw;
+  height: 200vh;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 60vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--primary-color);
+  
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 800px) {
+  .menu-wrap .menu > div {
+    width: 160vw; 
+  }
+}
+
+@media (max-width: 500px) {
+  .menu-wrap .menu > div { 
+    width: 280vw;  
+  }
+}
+
+
+
+/* .menu-wrap .menu > div > div > ul > li > a:active .menu {
+ display: none;
 } */
