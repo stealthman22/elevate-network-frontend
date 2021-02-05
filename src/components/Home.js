@@ -3,7 +3,10 @@ import HeroSlider from './elements/HeroSlider';
 
 const Home = () => (
   <>
-    <HeroSlider />
+    <div className="home-ctn">
+
+      <HeroSlider />
+    </div>
   </>
 );
 export default Home;
