@@ -32,8 +32,8 @@ module.exports = {
     // 'prefer-destructuring': ['error', { object: false, array: false }],
 
     // remove max line error
-    'max-len': ['error', { code: 140 }],
-
+    // 'max-len': ['error', { code: 140 }],
+    'max-len': 'warn',
     //  allow restricted syntax
     // other values are "LabeledStatement", "WithStatement", ForOfStatement
     // line 33 handleMenteeProfile
@@ -55,5 +55,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     // inner props declarations can get confusing
     'react/prop-types': 'warn',
+    'jsx-a11y/control-has-associated-label': 'off',
+    'global-require': 'warn',
   },
 };

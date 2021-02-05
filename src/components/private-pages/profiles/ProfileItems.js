@@ -22,8 +22,8 @@ const ProfileItems = ({
   },
 }) => (
   <>
-    <div className="profile bg-light">
-      <img src={avatar} alt="" className="round-img" />
+    <div className="profile bg-light m-1">
+      {/* <img src={avatar} alt="" className="round-img" /> */}
       <div>
         <h2>
           {role}

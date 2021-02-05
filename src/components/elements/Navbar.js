@@ -9,6 +9,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   //  auth links for registered
   const authLinks = (
     <ul>
+      <li><Link to="/Events">Events</Link></li>
       <li>
         <Link to="/partner-profiles">
            Partners
@@ -52,21 +53,24 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <nav className="navbar bg-dark">
-      <span className="logo-ctn">
-        <Link to="/">
-          <img className="logo" src={logo} alt="" />
-        </Link>
-      </span>
-      {!loading && (
-        <>
-          {' '}
-          {isAuthenticated ? authLinks : guestLinks}
-          {' '}
-        </>
-      )}
+    <div className="menu-wrap">
+      <input type="checkbox" className="toggler" id="toggleState" />
 
-    </nav>
+      <div className="hamburger"><div /></div>
+      <div className="menu">
+        <div>
+          <div>
+            {!loading && (
+              <>
+                {' '}
+                {isAuthenticated ? authLinks : guestLinks}
+                {' '}
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 // proptypes
