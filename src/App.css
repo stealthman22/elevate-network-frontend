@@ -380,8 +380,8 @@ button {
   left: 0;
   background-color: var(--light-color);
   box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.9);
-  padding: 0.2rem 1rem 0.2rem 0.1rem;
-  width: 200px;
+  padding: 0.1rem 0.1rem 0 0.1rem;
+  width: 8rem;
 }
 
 .logo-ctn:hover {
@@ -836,8 +836,8 @@ justify-content: center;
   right: 0;
   z-index: 2;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 3.4rem;
+  height: 3.4rem;
   opacity: 0;
 }
 
@@ -846,8 +846,8 @@ justify-content: center;
   top: 0;
   right: 0;
   z-index: 1;
-  width: 60px;
-  height: 60px;
+  width: 3.4rem;
+  height: 3.4rem;
   padding: 1rem;
   background: var(--dark-color);
   display: flex;
@@ -992,6 +992,115 @@ justify-content: center;
 
 
 
+
+/* Home Page */
+
+/* Hero */
+.hero-ctn {
+  position: relative;
+  background: url('./assets/hero.JPG') no-repeat center center 
+  / cover;
+   min-height: 100vh;
+ }
+ 
+ .headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  color: var(--light-color);
+  height: 80vh;
+  padding-top: 70px ;
+ }
+ 
+ .content{
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+padding-top: 1rem;
+  overflow: hidden;
+  z-index: 5;
+ }
+ 
+ .content-card {
+  position: absolute;
+  bottom: 5px;
+   background-color: var(--light-color);
+   border: 1px solid  var(--light-color);
+   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
+   padding:   0.4rem 2rem;
+   width: 70vw;
+   min-height: 8rem;
+   margin: 0.5rem;
+   text-align: center;
+ }
+
+ .overlay {
+	height: 100vh;
+	width: 100vw;
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+ 
+/* Values */
+.values-ctn {
+  padding:  2rem 1rem ;
+}
+
+.value-card {
+  display: flex;
+  background-color: var(--light-color);
+  border: 1px solid  var(--light-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+  padding:   0.5rem;
+  margin: 1rem;
+  min-height: 4rem;
+  width: 80vw;
+}
+
+
+
+.value-card-img {
+  width: 40%;
+}
+
+.vci-1 {
+background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center / contain;
+}
+
+.value-card-content {
+  width: 60%;
+}
+
+/* Highlight */
+.highlight-ctn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  max-width: 80vw;
+}
+
+.highlight-card {
+  background-color: var(--light-color);
+  border: 1px solid  var(--light-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  padding:   0.5rem;
+  margin: 1rem;
+  min-height: 8rem;
+  width: 50vw;
+}
+
+
+
+
+
+ 
+
+ 
+ 
 /* .menu-wrap .menu > div > div > ul > li > a:active .menu {
  display: none;
 } */
