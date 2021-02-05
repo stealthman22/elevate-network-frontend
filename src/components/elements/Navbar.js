@@ -3,12 +3,27 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../redux/actions/auth';
+import logo from '../../assets/Elevate Logo.svg';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   //  auth links for registered
   const authLinks = (
     <ul>
-
+      <li>
+        <Link to="/partner-profiles">
+           Partners
+        </Link>
+      </li>
+      <li>
+        <Link to="/mentor-profiles">
+           Mentors
+        </Link>
+      </li>
+      <li>
+        <Link to="/mentee-profiles">
+           Mentees
+        </Link>
+      </li>
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user" />
@@ -38,13 +53,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <nav className="navbar bg-dark">
-      <h1>
+      <span className="logo-ctn">
         <Link to="/">
-          {/* <i className="fas fa-code" />
-        {' '} */}
-          Elevate Network
+          <img className="logo" src={logo} alt="" />
         </Link>
-      </h1>
+      </span>
       {!loading && (
         <>
           {' '}
@@ -61,7 +74,7 @@ Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     isAuthenticated: PropTypes.bool,
-    loading: PropTypes.func,
+    loading: PropTypes.bool,
   }).isRequired,
 };
 

@@ -8,16 +8,16 @@ import { connect } from 'react-redux';
 const Alert = ({ alerts }) => alerts !== null
  && alerts.length > 0
  && alerts.map((alert) => (
-   <span
+   <p
      key={alert.id}
      className={`alert alert-${alert.alertType}`}
    >
      {alert.msg}
-   </span>
+   </p>
  ));
 
 Alert.propTypes = {
-  alert: PropTypes.shape([]).isRequired,
+  alert: PropTypes.shape([]),
 };
 // map redux state so we have access to it
 const mapStateToProps = (state) => ({

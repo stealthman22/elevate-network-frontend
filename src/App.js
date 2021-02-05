@@ -15,8 +15,20 @@ import Login from './components/auth-pages/Login';
 import ForgotPswd from './components/auth-pages/ForgotPassword';
 import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
-import CreateProfile from './components/private-pages/profile-forms/CreateProfile';
+import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
+import CreateMentorProfile from './components/private-pages/profile-forms/CreateMentorProfile';
+import CreatePartnerProfile from './components/private-pages/profile-forms/CreatePartnerProfile';
+import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
+import AddExp from './components/private-pages/profile-forms/AddExp';
+import AddEdu from './components/private-pages/profile-forms/AddEdu';
+// import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
 import PrivateRoute from './components/private-pages/PrivateRoute';
+import PartnerProfiles from './components/private-pages/profiles/PartnerProfiles';
+import MentorProfiles from './components/private-pages/profiles/MentorProfiles';
+import MenteeProfiles from './components/private-pages/profiles/MenteeProfiles';
+import MenteeProfile from './components/private-pages/profile/MenteeProfile';
+import MentorProfile from './components/private-pages/profile/MentorProfile';
+import PartnerProfile from './components/private-pages/profile/PartnerProfile';
 import './App.css';
 
 // For Redux
@@ -49,7 +61,19 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgotPassword" component={ForgotPswd} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+            <PrivateRoute exact path="/partner-profiles" component={PartnerProfiles} />
+            <PrivateRoute exact path="/mentor-profiles" component={MentorProfiles} />
+            <PrivateRoute exact path="/mentee-profiles" component={MenteeProfiles} />
+            <PrivateRoute exact path="/mentee-profile/:id" component={MenteeProfile} />
+            <PrivateRoute exact path="/mentor-profile/:id" component={MentorProfile} />
+            <PrivateRoute exact path="/partner-profile/:id" component={PartnerProfile} />
+            <PrivateRoute exact path="/create-mentee-profile" component={CreateMenteeProfile} />
+            <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
+            <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
+            <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
+            <PrivateRoute exact path="/add-experience" component={AddExp} />
+            <PrivateRoute exact path="/add-education" component={AddEdu} />
+
           </Switch>
         </>
       </Router>

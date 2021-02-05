@@ -29,50 +29,60 @@ const Login = ({ login, isAuthenticated }) => {
     // should be an object with properties
     login({ email, password });
   };
-
   //  redirect to dashboard if logged in
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
   return (
     <>
-      <h1 className="large text-primary">LOG IN</h1>
-      <p className="lead">
-        <i className="fas fa-user" />
-        {' '}
-        Log into Your Account
-      </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-            required
-          />
+      <div className=" auth-wrapper ">
 
-          <div className="form-group">
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={(e) => onChange(e)}
-              required
-              minLength="8"
-            />
+        <div className="auth-ctn">
+          <h1 className="medium text-primary text-center">LOG IN</h1>
+          <div className="left" />
+          <div className="right">
+            <p className="lead text-center">
+              <i className="fas fa-user" />
+              {' '}
+              <span>Log into Your Account</span>
+            </p>
+
+            <form className="form " onSubmit={(e) => onSubmit(e)}>
+              <div className="form-group">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => onChange(e)}
+                />
+
+                <div className=" py-1">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => onChange(e)}
+                    minLength="8"
+                  />
+                </div>
+
+              </div>
+              <input
+                type="submit"
+                className="btn btn-primary ml"
+                value="Log in"
+              />
+            </form>
+            <p className="py-1 text-center">
+              <span>Don&apos;t have an account?</span>
+              <br />
+              <Link to="/register">Sign Up </Link>
+            </p>
           </div>
-
         </div>
-        <input type="submit" className="btn btn-primary" value="Log in" />
-      </form>
-      <p className="my-1">
-        Don&apos;t have an account ?
-        <Link to="/register">Sign Up</Link>
-      </p>
-
+      </div>
     </>
   );
 };

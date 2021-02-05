@@ -19,6 +19,8 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+
+ 
 }
 
 a {
@@ -30,20 +32,40 @@ ul {
   list-style: none;
 }
 
+/* Check if it aligns properly */
 img {
   width: 100%;
 }
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
+
+
+/* Dashboard */
+.dashboard-ctn {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 1.3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+}
+
+
+
+.top-ctn {
+  margin-top: 4rem;
+}
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -57,8 +79,14 @@ img {
   margin-bottom: 1rem;
 }
 
+.medium {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
 .lead {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -126,6 +154,10 @@ img {
   margin: 3rem 0;
 }
 
+.ml {
+  margin-left: 0.7rem;
+}
+
 .btn {
   display: inline-block;
   background: var(--light-color);
@@ -133,8 +165,9 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin-right: 0.7rem;
   transition: opacity 0.2s ease-in;
   outline: none;
 }
@@ -149,11 +182,11 @@ img {
 }
 
 .alert {
-  padding: 0.8rem;
-  margin: 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
   opacity: 0.9;
   background: var(--light-color);
-  color: #333;
+
 
 }
 
@@ -207,7 +240,7 @@ img {
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .bg-light,
@@ -237,13 +270,14 @@ img {
 
 /* Forms */
 .form .form-group {
-  margin: 1.2rem 0;
+  margin: 0.1rem auto;
+  padding: 0.5rem ;
   
 }
 
 .form .form-text {
   display: block;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   color: #888;
 }
 
@@ -255,9 +289,21 @@ img {
 .form textarea {
   display: block;
   width: 100%;
-  padding: 0.4rem;
+  padding: 0.6rem ;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.form input:focus ,
+.form select:focus,
+.form textarea:focus {
+  transition: border-bottom 0.2s ease;
+  border-bottom: 1px solid var(--dark-color);
+}
+
+.form select {
+  background-color: var(--light-color)
 }
 
 .form input[type='submit'],
@@ -285,7 +331,7 @@ button {
   color: #3b5998;
 }
 .form .social-input i.fa-instagram {
-  color: #3f729b;
+  color: #DD2a7b;
 }
 .form .social-input i.fa-youtube {
   color: #c4302b;
@@ -316,6 +362,20 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* Logo */
+.logo-ctn {
+  background-color: var(--light-color);
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.9);
+  width: 200px;
+  padding: 0.2rem 1rem 0.2rem 0.1rem;
+}
+
+.logo-ctn:hover {
+  transition: box-shadow 0.2s ease ;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.9);
 }
 
 .navbar ul {
@@ -329,12 +389,36 @@ button {
 }
 
 .navbar a:hover {
+  transition: color 0.2s ease ;
   color: var(--primary-color);
 }
 
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
+
+
+
+
+  /* Navbar
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar h1 {
+    margin-bottom: 1rem;
+  }
+
+  .navbar .welcome {
+    display: none;
+  } */
+
 
 /* Landing Page */
 .landing {
@@ -355,6 +439,8 @@ button {
   text-align: center;
 }
 
+
+
 /* Profiles Page */
 .profile {
   display: grid;
@@ -374,7 +460,7 @@ button {
     'about about'
     'exp edu'
     'github github';
-  grid-gap: 1rem;
+  grid-gap: 1.3rem;
 }
 
 .profile-top {
@@ -393,10 +479,12 @@ button {
 .profile-top .icons a {
   color: #fff;
   margin: 0 0.3rem;
+  padding: 0.2rem;
 }
 
 .profile-top .icons a:hover {
-  color: var(--dark-color);
+  transition :  color 0.25s ease-in ;
+  color : var(--dark-color)
 }
 
 .profile-about {
@@ -500,6 +588,11 @@ button {
     margin-top: 8rem;
   }
 
+  .dashboard-ctn {
+    margin-top: 8rem;
+    
+  }
+
   .hide-sm {
     display: none;
   }
@@ -517,24 +610,7 @@ button {
     font-size: 1rem;
   }
 
-  /* Navbar */
-  .navbar {
-    display: block;
-    text-align: center;
-  }
 
-  .navbar ul {
-    text-align: center;
-    justify-content: center;
-  }
-
-  .navbar h1 {
-    margin-bottom: 1rem;
-  }
-
-  .navbar .welcome {
-    display: none;
-  }
 
   /* Profiles Page */
   .profile {
@@ -567,10 +643,13 @@ button {
     flex-direction: column;
   }
 
+  /*  wrapper for the dashboard */
+
+
   .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 0.7rem;
   }
 
   .post {
@@ -581,6 +660,104 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+
+/* Custom Styles */
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('./assets/pexels-miguel-á-padriñán-255379.jpg')  no-repeat center center / cover;
+ height: 100vh;
+  
+ }
+
+
+
+.auth-ctn {
+  display: flex;
+flex-direction: column;
+justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 72vh;
+  margin: 4rem  auto 0 auto ;
+  background-color: var(--light-color);
+  border: 2px solid  var(--light-color);
+  box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.8);
+  padding:   0.2rem 2rem;
+}
+
+.auth-ctn .left {
+  background: url('./assets//undraw_authentication_fsn5.svg') no-repeat
+  center center / contain; 
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  
+
+}
+.auth-ctn .right {
+width: 100%;
+padding: 0 5rem ;
+}
+
+@media (max-width: 800px) {
+  .auth-ctn .right {  
+    padding: 0 1rem ;
+    }
+}
+
+
+.reg-wrapper {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+  align-items: center;
+  background: url('./assets/pexels-miguel-á-padriñán-255379.jpg')  no-repeat center center / cover;
+  height: 100vh;
+ }
+
+.reg-ctn {
+  width: 85vw;
+  height: 85vh;
+  margin: 4rem  auto 0 auto  ;
+  background-color: var(--light-color);
+  border: 2px solid  var(--light-color);
+  box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.8);
+  padding: 0.6rem 2rem 0 2rem;
+}
+.reg-ctn .left {
+
+}
+
+.reg-ctn .right {
+
+}
+
+@media (max-width: 700px) {
+  .reg-ctn {
+    margin: 6rem  auto 0 auto  ;
+  }
+
+  .medium {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 365px) {
+  .reg-wrapper {
+    height: 140vh;
+  }
+  .reg-ctn {
+    height: 120vh;
+  }
+
+}
+
 
 
 

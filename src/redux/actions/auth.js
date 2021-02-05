@@ -24,7 +24,7 @@ const loadUser = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/auth');
 
-    dispatch({
+    await dispatch({
       type: USER_LOADED,
       payload: res.data,
     });
@@ -61,6 +61,7 @@ const register = ({
     dispatch(loadUser());
   } catch (err) {
     const { errors } = err.response.data;
+    console.log('The register error is here: ', errors);
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
@@ -97,7 +98,7 @@ const login = ({
     dispatch(loadUser());
   } catch (err) {
     const { errors } = err.response.data;
-    // console.log('The login error is here: ', errors);
+    console.log('The login error is here: ', errors);
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));

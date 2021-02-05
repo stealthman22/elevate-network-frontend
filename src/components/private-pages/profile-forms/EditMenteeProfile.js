@@ -1,10 +1,15 @@
-import React, { Fragment, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../../redux/actions/profile';
+import { handleProfile, getCurrentProfile } from '../../../redux/actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+const EditMenteeProfile = ({
+  profile: { profile, loading },
+  handleProfile,
+  getCurrentProfile,
+  history,
+}) => {
   const [formData, setformData] = useState({
     fullName: '',
     age: '',
@@ -22,6 +27,29 @@ const CreateProfile = ({ createProfile, history }) => {
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+    // fill form with current values
+    setformData(
+
+      {
+        fullName: loading || !profile.bio.fullName ? '' : profile.bio.fullName,
+        age: loading || !profile.bio.age ? '' : profile.bio.age,
+        aboutMe: loading || !profile.bio.aboutMe ? '' : profile.bio.aboutMe,
+        location: loading || !profile.bio.location ? '' : profile.bio.location,
+        dob: loading || !profile.bio.dob ? '' : profile.bio.dob,
+        // profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
+        skills: loading || !profile.interests.skills ? '' : profile.interests.skills.join(','),
+        learningInterests: loading || !profile.interests.learningInterests ? '' : profile.interests.learningInterests.join(','),
+        youtube: loading || !profile.social ? '' : profile.social.youtube,
+        facebook: loading || !profile.social ? '' : profile.social.facebook,
+        twitter: loading || !profile.social ? '' : profile.social.twitter,
+        instagram: loading || !profile.social ? '' : profile.social.instagram,
+        linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      },
+    );
+  }, [loading, getCurrentProfile]);
 
   const {
     fullName,
@@ -42,22 +70,24 @@ const CreateProfile = ({ createProfile, history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    handleProfile(formData, history);
   };
 
   return (
 
     <>
-      <h1 className="large text-primary">
-        Create Your Profile
-      </h1>
-      <p className="lead">
-        <i className="fas fa-user" />
-        {' '}
+      <div className="container">
+        <h1 className="large text-primary">
+        Edit Your Profile
+        </h1>
+        <p className="lead">
+          <i className="fas fa-user" />
+          {' '}
         Let&apos;s get some information to make your
         profile stand out
-      </p>
-      <small>* = required field</small>
+        </p>
+        <small>* = required field</small>
+      </div>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <small className="form-text">
@@ -97,7 +127,13 @@ const CreateProfile = ({ createProfile, history }) => {
             Please use comma separated values (eg.
             Arts, Sports, Fishing)
           </small>
-          <input type="text" placeholder="What would you be interested in learning" name="learningInterests" value={learningInterests} onChange={(e) => onChange(e)} />
+          <input
+            type="text"
+            placeholder="What would you be interested in learning"
+            name="learningInterests"
+            value={learningInterests}
+            onChange={(e) => onChange(e)}
+          />
         </div>
 
         <div className="my-2">
@@ -120,7 +156,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
             <div className="form-group social-input">
               <i className="fab fa-youtube fa-2x" />
-              <input type="text" placeholder="YouTube URL" name="youtube" value={youtube} onChange={(e) => onChange(e)} />
+              <input type="text" placeholder="youtube URL" name="youtube" value={youtube} onChange={(e) => onChange(e)} />
             </div>
 
             <div className="form-group social-input">
@@ -135,15 +171,29 @@ const CreateProfile = ({ createProfile, history }) => {
           </>
         )}
 
-        <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <input type="submit" className="btn btn-primary my-1" value="Submit" />
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
+
     </>
   );
 };
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
+
+EditMenteeProfile.propTypes = {
+  handleProfile: PropTypes.func.isRequired,
+  profile: PropTypes.shape({
+    loading: PropTypes.func,
+    profile: PropTypes.func,
+  }).isRequired,
   history: PropTypes.shape({}).isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, {
+  handleProfile,
+  getCurrentProfile,
+})(withRouter(EditMenteeProfile));
