@@ -6,7 +6,7 @@ const Hero = () => (
     <div className="overlay">
       <div className="headline">
         <h1>Elevate Network</h1>
-        <p>Inspire, Empower, Achieve</p>
+        <p className="lead">Inspire, Empower, Achieve</p>
       </div>
       <div className="content">
         <div className="content-card content-card1">
