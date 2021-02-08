@@ -21,7 +21,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-
+overflow-x: hidden;
  
 }
 
@@ -48,22 +48,6 @@ img {
   margin-top: 4rem;
   margin-bottom: 3rem;
   text-align: center;
-}
-
-
-/* Hero SLider */
-
-.hero-ctn {
-height: 100vh ;
-  
-}
-
-
-.slide-img{
-} 
-
-.slide-content {
-  z-index: 9;
 }
 
 /* Dashboard */
@@ -117,6 +101,7 @@ padding: 0 0.3rem;
 text-align: center;
 }
 
+
 .link-text {
   color: var(--primary-color);
   font-size: 1.3rem;
@@ -134,6 +119,10 @@ text-align: center;
 
 .text-dark {
   color: var(--dark-color);
+}
+
+.text-italic {
+  font-style: italic;
 }
 
 /* Padding */
@@ -1032,7 +1021,6 @@ justify-content: center;
  }
  
  .content{
-   
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1046,10 +1034,9 @@ padding-top: 1rem;
   position: absolute;
   bottom: 5px;
    background-color: var(--light-color);
-   border: 1px solid  var(--light-color);
    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
-   padding:   0.4rem 2rem;
-   width: 70vw;
+   padding: 0.4rem 1rem;
+   width: 80vw;
    min-height: 8rem;
    margin: 0.5rem;
    text-align: center;
@@ -1064,14 +1051,13 @@ padding-top: 1rem;
  
 /* About us */
 .about-ctn {
- padding:  2rem 1rem 
-}
-
-.about-img{
-background: url('./assets/about3.JPG') no-repeat center center / cover;
-height: 50vh;
-border-radius: 50%;
-margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
+ padding: 2rem;
+ margin: 1rem 0;
+ 
 }
 
 .about-text {
@@ -1080,16 +1066,15 @@ margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 20px;
 }
-
-
-blockquote {
+/* Quotes */
+.quote {
   background: var(--light-color);
-  border-left: 10px solid var(--primary-color);
+  border-left: 5px solid var(--primary-color);
   margin: 1.5rem 0.5rem;
   padding: 1rem ;
   quotes: "\201C""\201D""\2018""\2019";
 }
-blockquote:before {
+.quote:before {
   color: var(--dark-color);
   content: open-quote;
   font-size: 4em;
@@ -1097,14 +1082,23 @@ blockquote:before {
   margin-right: 0.25rem;
   vertical-align: -0.4em;
 }
-blockquote p {
+
+.quote p {
   display: inline;
 }
+
+
 
 /* Values */
 .values-ctn {
   padding:  2rem 1rem ;
   
+}
+
+.value-card-ctn {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .value-card {
@@ -1153,7 +1147,7 @@ blockquote p {
 
 
   .value-card-content {
-    padding:   0.4rem ;
+    padding:   1rem ;
   }
 
 

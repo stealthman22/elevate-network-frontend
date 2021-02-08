@@ -9,7 +9,7 @@ const Hero = () => (
         <p className="lead">Inspire, Empower, Achieve</p>
       </div>
       <div className="content">
-        <div className="content-card content-card1">
+        <div className=" content-card ">
           <span>
           The Elevate Network Community is
            a unique and premier program designed to help students level up academically, personally

@@ -11,45 +11,51 @@ const Home = () => (
       <div className="about-ctn">
         <h2 className="large text-center text-primary">EN At A Glance</h2>
         <div className="about-wrapper">
-          <blockquote className="text-center medium">
+
+          <div className=" about-quote quote text-center medium">
             <p>
               {' '}
-If you want to go far,
+              If you want to go far,
               {' '}
               <br />
               {' '}
-go together
+              go together
               {' '}
               <br />
-... an African proverb
+              <span className="text-italic">... an African proverb</span>
             </p>
-          </blockquote>
-          <div className="about-img" />
+          </div>
+
           <div className="about-text">
-            <p className="text-chunk">
-          The
+            <p className=" lead text-chunk">
+            What makes the
               {' '}
               <span className="link-text">
                 {' '}
                 <Link to="/register">Elevate Network </Link>
                 {' '}
               </span>
-          Community is a unique and
-        premier program designed to help students level up
-        academically, personally and professionally. What makes
-the community unique stands with the diverse group of
-people beginning with partners, mentors etc.
+           community unique, stands with the diverse group of
+            people beginning with partners, mentors etc.
               {' '}
             </p>
 
-            <p className="text-chunk">
-We strive to help students who are dedicated to the process of
-winning in anything they want to accomplish.
-We want students to reach their epitome of what they define as
-success and we know our community will boost their
-morale and confidence in fulfilling their life’s purpose.
+            <p className=" lead text-chunk">
+            We strive to help students who are dedicated to the process of
+            winning in anything they want to accomplish.
+
             </p>
 
+            <p className="lead text-chunk">
+            We want students to reach their epitome of what they define as
+            success and we know our community will boost their
+            morale and confidence in fulfilling their life’s purpose.
+            </p>
+
+            <p>
+            Life brings challenges
+            and those challenges must be met with a plan to win, against all odds.
+            </p>
           </div>
         </div>
       </div>
@@ -64,87 +70,86 @@ morale and confidence in fulfilling their life’s purpose.
               {' '}
             </span>
             {' '}
-is a special place where we all propel the
-fulfillment of potential through faith.
-We take delight in our core
-values from which we develop our brand, culture, and our impact
-strategies. We believe in;
+            is a special place where we all propel the
+            fulfillment of potential through faith.
+            We take delight in our core
+            values from which we develop our brand, culture, and our impact
+            strategies. We believe in;
             <p />
 
           </div>
 
         </div>
-
-        <div className="value-card">
-          <div className="value-headline value-headline-1">
-            <h3>Empowerment</h3>
-          </div>
-          <div className="value-card-content">
-            <span>
+        <div className="value-card-ctn">
+          <div className="value-card">
+            <div className="value-headline value-headline-1">
+              <h3>Empowerment</h3>
+            </div>
+            <div className="value-card-content">
+              <span>
             We empower students to tap
              into their full potential
-            </span>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div className="value-card">
-          <div className="value-headline value-headline-2"><h3>Co-creation</h3></div>
-          <div className="value-card-content">
-            <span>
+          <div className="value-card">
+            <div className="value-headline value-headline-2"><h3>Co-creation</h3></div>
+            <div className="value-card-content">
+              <span>
             We co-create long-term positive
-impact in collaboration with all our
-stakeholders full potential
-            </span>
+            impact in collaboration with all our
+            stakeholders full potential
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div className="value-card">
-          <div className="value-headline value-headline-3">
-            <h3>Integrity</h3>
+          <div className="value-card">
+            <div className="value-headline value-headline-3">
+              <h3>Integrity</h3>
+            </div>
+            <div className="value-card-content">
+              <span>
+              We adhere to the highest
+              standards of moral behavior in all
+              our interactions
+              </span>
+            </div>
           </div>
-          <div className="value-card-content">
-            <span>
-We adhere to the highest
-standards of moral behavior in all
-our interactions
-            </span>
-          </div>
-        </div>
 
-        <div className="value-card">
-          <div className="value-headline value-headline-4">
-            <h3>Appreciation</h3>
-          </div>
-          <div className="value-card-content">
-            <span>
+          <div className="value-card">
+            <div className="value-headline value-headline-4">
+              <h3>Appreciation</h3>
+            </div>
+            <div className="value-card-content">
+              <span>
             We embody and foster a culture of
-appreciation for one another
-            </span>
+            appreciation for one another
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="value-card">
-          <div className="value-headline value-headline-5">
-            <h3>Trust</h3>
-          </div>
-          <div className="value-card-content">
-            <span>
+          <div className="value-card">
+            <div className="value-headline value-headline-5">
+              <h3>Trust</h3>
+            </div>
+            <div className="value-card-content">
+              <span>
             We believe in trust as the glue and
-foundation of our relationships
-            </span>
+            foundation of our relationships
+              </span>
+            </div>
+          </div>
+          <div className="value-card">
+            <div className="value-headline value-headline-6">
+              <h3>Creativity and Innovation</h3>
+            </div>
+            <div className="value-card-content">
+              <span>
+            Cultivating a creative, innovative and entrepreneurial culture
+              </span>
+            </div>
           </div>
         </div>
-        <div className="value-card">
-          <div className="value-headline value-headline-6">
-            <h3>Creativity and Innovation</h3>
-          </div>
-          <div className="value-card-content">
-            <span>
-            Cultivating a creative, innovative
-and entrepreneurial culture
-            </span>
-          </div>
-        </div>
-
       </div>
 
       {/*
