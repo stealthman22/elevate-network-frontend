@@ -1,6 +1,7 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from './elements/Hero';
+import CallToAction from './elements/CallToAction';
 
 const Home = () => (
   <>
@@ -28,43 +29,67 @@ const Home = () => (
 
           <div className="about-text">
             <p className=" lead text-chunk">
-            What makes the
+
               {' '}
               <span className="link-text">
                 {' '}
                 <Link to="/register">Elevate Network </Link>
                 {' '}
               </span>
-           community unique, stands with the diverse group of
-            people beginning with partners, mentors etc.
-              {' '}
+           Community  is an educational platform
+           where students can learn STEM, Art & Design, Entrepreneurship, etc.
+
             </p>
 
             <p className=" lead text-chunk">
-            We strive to help students who are dedicated to the process of
-            winning in anything they want to accomplish.
+            Made up of highly
+            talented creatives, innovators and entrepreneurs.
+            We are all driven by a single goal:
+              <span className="emphasis-text"> creating content that will help you succeed.</span>
+            </p>
 
+            <p className=" lead text-chunk">
+            Our program creates a clear pathway for senior high
+            school students and alumni into the industries and
+            also connects them to industry experts.
+
+            </p>
+            <p className=" lead text-chunk">
+              {' '}
+                We strive to help students who are
+              {' '}
+              <span className="emphasis-text"> dedicated to the process of winning </span>
+              {' '}
+              in anything they want to accomplish.
             </p>
 
             <p className="lead text-chunk">
-            We want students to reach their epitome of what they define as
-            success and we know our community will boost their
-            morale and confidence in fulfilling their life’s purpose.
+            We want students to reach the epitome of what they define as
+            success and we know
+              <span className="emphasis-text">
+                {' '}
+                {' '}
+our community will boost their
+            morale and confidence
+              </span>
+              {' '}
+in fulfilling their life’s purpose.
             </p>
 
             <p>
             Life brings challenges
-            and those challenges must be met with a plan to win, against all odds.
+            and those challenges must be met with
+              <span className="emphasis-text">a plan to win, against all odds.</span>
             </p>
           </div>
         </div>
       </div>
-
+      <CallToAction />
       <div className="values-ctn">
         <h2 className="large text-center text-primary"> Our Values</h2>
         <div className="value-intro">
 
-          <div className="hl-text lead">
+          <div className="lead hl-text">
             <span className="link-text">
               <Link to="/register">Elevate Network </Link>
               {' '}
@@ -150,6 +175,7 @@ const Home = () => (
             </div>
           </div>
         </div>
+
       </div>
 
       {/*

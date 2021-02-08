@@ -7,6 +7,7 @@
   --success-color: #28a745;
   --overlay-color: rgba(24, 39, 51 , 0.85);
   --menu-speed: 0.50s;
+  --dark-color-transparent: rgba(52, 58, 64, 0.85);
 }
 
 * {
@@ -85,8 +86,6 @@ img {
   margin-bottom: 0.5rem;
 }
 
-
-
 .lead {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -100,7 +99,6 @@ font-style: italic;
 padding: 0 0.3rem;
 text-align: center;
 }
-
 
 .link-text {
   color: var(--primary-color);
@@ -123,6 +121,11 @@ text-align: center;
 
 .text-italic {
   font-style: italic;
+}
+
+
+.emphasis-text {
+  font-weight: bold;
 }
 
 /* Padding */
@@ -696,6 +699,19 @@ button {
 
 
 /* Custom Styles */
+.cta-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-color);
+  height: 20vh;
+  width: 100vw;
+  margin: 1rem 0;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
 .auth-wrapper {
   display: flex;
   flex-direction: column;
@@ -1027,15 +1043,19 @@ justify-content: center;
   align-items: center;
 padding-top: 1rem;
   overflow: hidden;
-  z-index: 5;
+
  }
  
  .content-card {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 5px;
    background-color: var(--light-color);
    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
-   padding: 0.4rem 1rem;
+   padding: 0.5rem 1rem;
    width: 80vw;
    min-height: 8rem;
    margin: 0.5rem;
@@ -1105,11 +1125,12 @@ align-items: center;
   display: flex;
   flex-direction: column;
   background-color: var(--light-color);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.9);
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.8);
   margin: 1rem;
   min-height: 4rem;
   width: 80vw;
   text-align: center;
+ 
 }
 
 
@@ -1147,7 +1168,7 @@ align-items: center;
 
 
   .value-card-content {
-    padding:   1rem ;
+    padding:   1rem  ;
   }
 
 
