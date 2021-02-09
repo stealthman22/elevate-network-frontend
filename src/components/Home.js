@@ -90,7 +90,7 @@ const Home = () => (
         <h2 className="large text-center text-primary"> Our Values</h2>
         <div className="value-intro">
 
-          <div className="lead hl-text">
+          <div className="lead hl-text value-hl-text">
             <span className="link-text">
               <Link to="/register">Elevate Network </Link>
               {' '}

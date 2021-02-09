@@ -56,7 +56,7 @@ For enquiries mail or call us @:
 
             <a href="mailto:admin@elevatenetworkhq.com" target="_blank" rel="noreferrer" className="mail-icon">
               {' '}
-              <i className="fas fa-envelope-open-text fa-2x" />
+              <i className="fas fa-inbox fa-2x" />
               {' '}
               <p> Admin</p>
             </a>
