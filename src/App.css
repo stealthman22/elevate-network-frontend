@@ -1271,8 +1271,43 @@ background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center
   width: 80vw;
   border-radius: 10px;
   min-height: 9rem;
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8); */
 }
 
+@media (min-width: 600px) {
+  .port-card {
+  
+    width: 70vw;
+   
+  }
+}
+
+
+@media (min-width: 900px) {
+  .port-card {
+  
+    width: 60vw;
+   
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .portfolio-wrapper {
+  display: flex;
+  justify-content: center;
+
+   
+   
+  }
+
+  .port-card {
+
+    width: 40vw
+  }
+
+ 
+}
 
 /* .module-card {
   background-color: #fff;

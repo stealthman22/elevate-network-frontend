@@ -251,96 +251,97 @@ the web.
           </div>
         </div>
 
-        <div className="portfolio">
+        <div className="portfolio-ctn">
           <h2 className="large text-center text-primary">Our Portfolio</h2>
-          <div className="community">
-            <h4 className="  text-center ">COMMUNITY SUPPORT</h4>
-            <div className="comm-1">
-              <div className="port-card">
-                <i className="fas fa-lightbulb"> IDEA LAB</i>
-                <p>
+          <div className="portfolio-wrapper">
+            <div className="community">
+              <h4 className="  text-center ">COMMUNITY SUPPORT</h4>
+              <div className="comm-1">
+                <div className="port-card">
+                  <i className="fas fa-lightbulb"> IDEA LAB</i>
+                  <p>
           Supporting potential students
           to develop their ideas into
           actual business.
-                </p>
-              </div>
+                  </p>
+                </div>
 
-              <div className="port-card">
-                <i className="fa fa-users" aria-hidden="true"> MENTORING PROGRAMS</i>
-                <p>
+                <div className="port-card">
+                  <i className="fa fa-users" aria-hidden="true"> MENTORING PROGRAMS</i>
+                  <p>
                 Matching community members with skillful and seasoned
                 entrepreneurs from various backgrounds.
-                </p>
-              </div>
+                  </p>
+                </div>
 
-              <div className="port-card">
-                <i className="fas fa-egg"> INCUBATION</i>
-                <p>
+                <div className="port-card">
+                  <i className="fas fa-egg"> INCUBATION</i>
+                  <p>
                 Building students ideas via connections with corporates,
 networks and tailor-made tools
-                  {' '}
-                  <br />
-                  {' '}
+                    {' '}
+                    <br />
+                    {' '}
 and providing students
 with the resources they need to make a difference.
-                </p>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="comm-2">
-              <div className="port-card">
-                <i className="fas fa-box"> LAUNCH BOX</i>
-                <p>
+              <div className="comm-2">
+                <div className="port-card">
+                  <i className="fas fa-box"> LAUNCH BOX</i>
+                  <p>
 Collection of training materials from the whole Elevate
 product portfolio
-                </p>
-              </div>
+                  </p>
+                </div>
 
-              <div className="port-card">
-                <i className="fas fa-home"> ELEVATE HOUSE</i>
-                <p>
+                <div className="port-card">
+                  <i className="fas fa-home"> ELEVATE HOUSE</i>
+                  <p>
                 A unique combination of workspace, networking hub, and
 learning environment
-                </p>
-              </div>
+                  </p>
+                </div>
 
-              <div className="port-card">
-                <i className="fas fa-shuttle-van"> EXPEDITION</i>
-                <p>
+                <div className="port-card">
+                  <i className="fas fa-shuttle-van"> EXPEDITION</i>
+                  <p>
               Vehicle for students and ecosystem actors interested in
               learning from each other and accessing new markets
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="organization">
-            <h4 className="  text-center ">ORGANIZATIONAL SUPPORT</h4>
-            <div className="port-card">
-              <i className="fas fa-user-tie"> CHAPTER MANAGER MENTOR (CMM)</i>
-              <p>
+            <div className="organization">
+              <h4 className="  text-center ">ORGANIZATIONAL SUPPORT</h4>
+              <div className="port-card">
+                <i className="fas fa-user-tie"> CHAPTER MANAGER MENTOR (CMM)</i>
+                <p>
               A tailor-made curriculum promoting the mindset of
               mentoring & empowering chapter managers and
               executives.
-              </p>
-            </div>
+                </p>
+              </div>
 
-            <div className="port-card">
-              <i className="fas fa-comments"> PARENT - TEACHER SEGMENT</i>
-              <p>
+              <div className="port-card">
+                <i className="fas fa-comments"> PARENT - TEACHER SEGMENT</i>
+                <p>
               Intensive training & solution-oriented curriculum for
               parents and teachers from different sectors.
-              </p>
-            </div>
+                </p>
+              </div>
 
-            <div className="port-card">
-              <i className="fas fa-handshake"> CONSULTING & ADVISORY</i>
-              <p>
+              <div className="port-card">
+                <i className="fas fa-handshake"> CONSULTING & ADVISORY</i>
+                <p>
               Tailor-made services for students, individuals and brands.
-              </p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
 
       {/*
