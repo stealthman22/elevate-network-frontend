@@ -9,7 +9,7 @@ import Navbar from './components/elements/Navbar';
 import Logo from './components/elements/Logo';
 import Home from './components/Home';
 import Community from './components/Community';
-import Events from './components/Events';
+import Programs from './components/Programs';
 import Faq from './components/Faq';
 import Register from './components/auth-pages/Register';
 import Login from './components/auth-pages/Login';
@@ -57,7 +57,7 @@ const App = () => {
           <Alert />
           <Switch>
             <Route exact path="/community" component={Community} />
-            <Route exact path="/events" component={Events} />
+            <Route exact path="/programs" component={Programs} />
             <Route exact path="/faq" component={Faq} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

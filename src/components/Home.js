@@ -90,22 +90,23 @@ const Home = () => (
         <h2 className="large text-center text-primary"> Our Values</h2>
         <div className="value-intro">
 
-          <div className="lead hl-text value-hl-text">
+          <div className="lead  value-hl-text">
             <span className="link-text">
               <Link to="/register">Elevate Network </Link>
               {' '}
             </span>
             {' '}
+            <p>
             is a special place where we all propel the
             fulfillment of potential through faith.
             We take delight in our core
             values from which we develop our brand, culture, and our impact
             strategies. We believe in;
-            <p />
-
+            </p>
           </div>
 
         </div>
+
         <div className="value-card-ctn">
           <div className="value-card">
             <div className="value-headline value-headline-1">
@@ -264,7 +265,7 @@ const Home = () => (
               <div className="port-card">
                 <i className="fas fa-lightbulb"> IDEA LAB</i>
                 <p>
-                  Supporting potential students
+                  Supporting potentialportfolio-wr students
                    to develop their ideas into
                 actual business.
                 </p>
