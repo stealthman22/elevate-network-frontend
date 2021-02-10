@@ -38,7 +38,7 @@ const Footer = () => (
           </div>
         </div>
         <div className="contact">
-          <span className="ml">
+          <span className="m-2">
 For enquiries mail or call us @:
           </span>
 

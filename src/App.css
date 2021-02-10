@@ -1137,7 +1137,8 @@ justify-content: center;
 
 
 
-.values-ctn, .modules-ctn, .portfolio-ctn, .partners-ctn {
+.values-ctn, .modules-ctn, .portfolio-ctn,
+ .partners-ctn, .mentees-ctn {
   padding:  2rem 3rem ;
   
 }
@@ -1255,7 +1256,7 @@ background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center
 }
 
 .module-card {
-  background-color: #fff;
+  background-color: var(--light-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   padding:   1rem;
   margin: 1rem;
@@ -1285,13 +1286,9 @@ background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center
   }
 
   .module-card {
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
     padding:   0.7rem;
-    margin: 1rem;
     min-height: 50vh;
     width: 35vw;
-    border-radius: 10px;
   } 
 }
 
@@ -1309,7 +1306,7 @@ background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center
   margin: 1rem;
   width: 80vw;
   border-radius: 10px;
-  min-height: 5rem;
+  min-height: 0.5rem;
   /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8); */
 }
 
@@ -1353,7 +1350,8 @@ background: url('./assets//undraw_team_spirit_hrr4.svg') no-repeat center center
 /* Footer */
 .footer-ctn {
   height: 100vh;
-  background-color:var(--dark-color)
+  background-color:var(--dark-color);
+  overflow-x: hidden;
 } 
 
 .footer-card {
@@ -1395,6 +1393,7 @@ height: 25vh;
 
 .mail-icons, .smb-icons{
   display: flex;
+  
  
 }
 
@@ -1426,6 +1425,15 @@ text-align: center ;
     }
 }
 
+@media(max-width: 500px) {
+  .mail-icon, .smb-icon {
+    color: var(--light-color);
+    margin: 0.7rem;
+  
+    text-align: center ;
+    }
+}
+
 /* Community Page */
 
 .comm-ctn {
@@ -1450,7 +1458,7 @@ text-align: center ;
 .partner-img {
   background: url('./assets/partner-min.JPG') no-repeat center center 
   / cover;
-  height: 70vh;
+  height: 80vh;
   width: 80vw;
 }
  
@@ -1458,6 +1466,7 @@ text-align: center ;
   display: flex;
 flex-direction: column;
 align-items: center;
+
 
 }
  
@@ -1482,9 +1491,9 @@ align-items: center;
   cursor: pointer;
 }
 
-
 .partner-card {
-  background-color: #fff;
+  
+  background-color: var(--light-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   padding:   1rem;
   margin: 1rem;
@@ -1493,6 +1502,28 @@ align-items: center;
   border-radius: 10px;
 }
 
+.mentee-img-ctn {
+  background: url('./assets/mentee-min.JPG') no-repeat center center 
+  / cover;
+  height: 80vh;
+  width: 80vw;
+}
+
+.membership-ctn {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.membership-ctn-right  {
+  margin-left: 1rem;
+}
+
+
+.membership-ctn-card > h5 {
+  margin-left: 1rem;
+}
 
 
 @media (min-width: 900px) {
@@ -1537,6 +1568,23 @@ align-items: center;
 
   .partner-card {
     padding:   1rem 3rem; 
+    width: 80%;
+    margin: 0 auto;
     
   }
+
+
+  .membership-ctn {
+    display: flex; 
+    justify-content: center;
+    
+  }
+  .membership-ctn-right  {
+    margin-left: 1rem;
+  }
+
+  .membership-ctn-card > h5 {
+    margin-left: 1.5rem;
+  }
 }
+

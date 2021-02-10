@@ -1,5 +1,6 @@
 import { Fragment, React } from 'react';
 import CallToAction from './elements/CallToAction';
+import Footer from './elements/Footer';
 
 import characterLogo from '../assets/partner-logos/characters.jpeg';
 import lancasterLogo from '../assets/partner-logos/lancaster.png';
@@ -146,13 +147,13 @@ const Community = () => (
               meeting with us.
             </p>
             <p>
-          We’re hyper-organized, diversely creative, and results-
-          driven. If you’re a forward-thinking organization looking
-          to engage with next generation, global community,
-          international speakers, brands and global innovators,
-          Elevate Network is for you. Tell us your goals and
-          together we’ll craft a unique and unforgettable
-          experience with Elevate Network.
+              We’re hyper-organized, diversely creative, and results-
+              driven. If you’re a forward-thinking organization looking
+              to engage with next generation, global community,
+              international speakers, brands and global innovators,
+              Elevate Network is for you. Tell us your goals and
+              together we’ll craft a unique and unforgettable
+              experience with Elevate Network.
             </p>
           </div>
         </div>
@@ -191,7 +192,7 @@ const Community = () => (
         </p>
         <div className="organization">
           <div className="port-card">
-            <i className="fas fa-user-tie"> CONFERENCE SPONSORSHIP</i>
+            <i className="fas fa-user-tie"> Conference Sponsorships</i>
             <p>
               Our flagship conference is the best opportunity
               to connect with and get your brand in front of
@@ -201,7 +202,7 @@ const Community = () => (
           </div>
 
           <div className="port-card">
-            <i className="fas fa-egg"> INCUBATION PROGRAM</i>
+            <i className="fas fa-egg">Incubation Program </i>
             <p>
               Expanding on student’s creative ideas for their
             specific career focus.
@@ -209,7 +210,7 @@ const Community = () => (
           </div>
 
           <div className="port-card">
-            <i className="fa fa-users">COMMUNITY PARTNER</i>
+            <i className="fa fa-users"> Community Partner</i>
             <p>
               An opportunity for industry leaders, mid-market,
               enterprise-level and NGOs organizations to
@@ -219,7 +220,7 @@ const Community = () => (
           </div>
 
           <div className="port-card">
-            <i className="fa fa-calendar">CUSTOM EVENTS</i>
+            <i className="fa fa-calendar"> Custom Events</i>
             <p>
           Our events team is world class. We work with
           partners to host a variety of tailored, custom
@@ -229,7 +230,7 @@ const Community = () => (
           </div>
 
           <div className="port-card">
-            <i className="fas fa-handshake"> COMMUNITY ENGAGEMENT</i>
+            <i className="fas fa-handshake"> Community Engagements</i>
             <p>
               Connect to the largest students community. Our
               chapter ecosystem includes high schools and
@@ -243,6 +244,221 @@ const Community = () => (
       </div>
     </section>
     <CallToAction />
+
+    <section className="mentees-ctn">
+      <h2 className="large text-center text-primary">Mentees</h2>
+      <div className="partner-img-ctn">
+        <div className="mentee-img-ctn" />
+      </div>
+      <h3 className="my-2 text-underline text-center">E.N.C Membership</h3>
+      <p className="lead  value-hl-text  text-center text-italic">
+        The E.N.C Membership is an exceptional, intimate tier of
+        extraordinary people who are committed to creating an
+        enduring legacy that will impact the world...
+      </p>
+      <div className="modules-wrapper">
+        <div className="partner-card ">
+          <p className="text-chunk">
+            The Elevate Network Community is designed for
+            students who are committed to living life at a level few
+            may ever attain.
+          </p>
+          <p className="text-chunk">
+            Limited to an exclusive group of serious students, the
+            membership provides the unprecedented opportunity
+            to network with and learn from a group of hand-
+            picked, highly-talented creatives, innovators and
+            entrepreneurs: The Game-Changers.
+          </p>
+          <p className="text-chunk">
+            Members receive exclusive invitations to incredible
+            expeditions each year. Mentors and life coaches join
+            the members on select trips as they learn, network and
+            play in such a diverse way.
+          </p>
+          <p className="text-chunk">
+            Elevate Network Community Membership is an
+            opportunity to receive personalized level of coaching
+            from our partners and global coaches from the Elevate
+            Network Organization not previously available.
+
+          </p>
+          <p>
+            You
+            will have access to attend Elevate Network live events
+            whenever you want, as often as you like, anywhere in
+            the world- and of course enjoy VIP session in the house.
+          </p>
+        </div>
+      </div>
+
+      <h3 className="my-3 text-underline text-center">Our Unique Benefits</h3>
+
+      <div className="organization">
+        <div className="port-card">
+          <i className="fas fa-user-tie"> Education</i>
+          <p>
+          Learn from many global changers at our major
+          conferences, onsite programs, meetups as part
+          of our global community and through our online
+          Program.
+          </p>
+        </div>
+
+        <div className="port-card">
+          <i className="fas fa-egg"> Network</i>
+          <p>
+          Meet incredible entrepreneurs, innovators,
+          artist, investors, changemakers and make real
+          relationships with our partners.
+          </p>
+        </div>
+
+        <div className="port-card">
+          <i className="fa fa-users"> Exposure</i>
+          <p>
+          Tell the world what you are working on by using
+          our platform, our reach as your amplifier and our
+          global community as your audience.
+          </p>
+        </div>
+
+      </div>
+
+      <h3 className="my-3 text-underline text-center">Getting into the community</h3>
+      <div className="membership-ctn">
+        <div className="membership-ctn-left">
+          <h4 className="my-3 text-underline text-center">Community Application</h4>
+          <div className="membership-ctn-card my-2">
+            <h5>INTERVIEW</h5>
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            200 student capacity with no changes.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            If you don’t meet the deadline or if we are maxed
+            on capacity, you will be placed on a waitlist.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            Your membership applies online or through a
+            chapter.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            We review your application; respond back in two
+            days.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            Set up a meeting for final interview.
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+        <div className="membership-ctn-right">
+          <h4 className="my-3 text-underline text-center">Community Acceptance</h4>
+          <div className="membership-ctn-card my-2">
+            <h5>PAYMENT</h5>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            If accepted, you pay the Community Program
+            Membership fee to secure your place.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            Membership fee is $100 dollars per student.
+            (Rates will apply on the date you enroll).
+              </span>
+
+            </div>
+          </div>
+
+          <div className="membership-ctn-card my-2">
+            <h5>COMMUNITY PROGRAM ACCESS</h5>
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            You receive Benefits (at conference) + Community
+            Benefits (post conference)
+              </span>
+            </div>
+          </div>
+
+          <div className="membership-ctn-card my-2">
+            <h5>MEMBERSHIP RENEWAL/SUBSCRIPTION</h5>
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            Membership can be renewed annually.
+              </span>
+
+            </div>
+
+            <div className="port-card">
+              <i className="fas fa-check"> </i>
+              {' '}
+              {' '}
+              <span>
+            No refund if you drop out.
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <CallToAction />
+
+    <section className="mentors-ctn">
+      <h2 className="large text-center text-primary">Mentors</h2>
+    </section>
+    <Footer />
   </div>
 
 );
