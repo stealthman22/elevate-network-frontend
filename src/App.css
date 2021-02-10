@@ -1114,6 +1114,14 @@ justify-content: center;
   padding: 1rem;
   border-radius: 10px;
 }
+
+@media(min-width: 1000px) {
+  .about-text {
+  width: 70%;
+  margin: 0 auto;
+  }
+  
+}
 /* Quotes */
 .quote {
   background: var(--light-color);
@@ -1138,7 +1146,7 @@ justify-content: center;
 
 
 .values-ctn, .modules-ctn, .portfolio-ctn,
- .partners-ctn, .mentees-ctn {
+ .partners-ctn, .mentees-ctn, .mentors-ctn {
   padding:  2rem 3rem ;
   
 }
@@ -1461,6 +1469,14 @@ text-align: center ;
   height: 80vh;
   width: 80vw;
 }
+
+.mentor-img {
+  background: url('./assets/mentor2-min.JPG') no-repeat center center 
+  / cover;
+  height: 80vh;
+  width: 80vw;
+  margin-bottom: 1.5rem;
+}
  
 .partner-cards {
   display: flex;
@@ -1559,6 +1575,13 @@ align-items: center;
 }
 
 
+@media(min-width: 1000px) {
+  .partner-card {
+    padding:   1rem 3rem; 
+    width: 70%;
+    margin: 0 auto;
+}
+
 @media (min-width: 1200px) {
   .new-partners, .academic-partners {
     display: flex;
@@ -1566,10 +1589,7 @@ align-items: center;
     align-items: center;
   }
 
-  .partner-card {
-    padding:   1rem 3rem; 
-    width: 80%;
-    margin: 0 auto;
+
     
   }
 

@@ -155,6 +155,7 @@ const Community = () => (
               together we’ll craft a unique and unforgettable
               experience with Elevate Network.
             </p>
+
           </div>
         </div>
       </div>
@@ -457,6 +458,53 @@ const Community = () => (
 
     <section className="mentors-ctn">
       <h2 className="large text-center text-primary">Mentors</h2>
+      <div className="partner-img-ctn">
+        <div className="mentor-img" />
+      </div>
+      <div className="modules-wrapper">
+        <div className="partner-card ">
+          <p className="text-chunk">
+          Many successful people in the world have mentors.
+          Mentors pave the way for mentees to continue to walk
+          in their chosen path. They provide personal experiences,
+           guidance, motivation, role modeling and more
+          importantly emotional support to their respective students
+          beyond the household or school.
+          </p>
+          <p className="text-chunk">
+            They push students
+           to explore different career or entrepreneurial options,
+            developing new networks or contacts, identifying
+          many resources and setting big goals. Students are
+          known to stay within their comfort zones and a mentor
+          is designed to keep them striving beyond their comfort
+          zones and exploring new options through, STEM, Entrepreneurship,
+          Art/Design, and developing stronger emotional intelligence.
+
+          </p>
+
+          <p className="text-chunk">
+              We’re hyper-organized, diversely creative, and results-
+              driven. If you’re a forward-thinking organization looking
+              to engage with next generation, global community,
+              international speakers, brands and global innovators,
+              Elevate Network is for you. Tell us your goals and
+              together we’ll craft a unique and unforgettable
+              experience with Elevate Network.
+          </p>
+
+          <p>
+              We want to ignite people’s fire within the continent of
+              Africa. Our teams worldwide are constantly developing
+                the current programs for our community and adding
+              new elements to improve how we deliver to the students
+              and families. Let’s take the next step in develop-
+              ing and full-filling our call with us while creating
+              memorable experiences for your legacy.
+
+          </p>
+        </div>
+      </div>
     </section>
     <Footer />
   </div>
