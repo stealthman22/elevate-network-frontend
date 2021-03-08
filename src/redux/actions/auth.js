@@ -10,6 +10,8 @@ import {
   LOGIN_FAIL,
   LOG_OUT,
   CLEAR_PROFILE,
+  RESET_SUCCESS,
+  RESET_FAIL,
 } from './types';
 
 // Global header
@@ -110,6 +112,41 @@ const login = ({
   }
 };
 
+// password reset action
+const resetPswd = ({
+  email,
+}) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+
+  };
+  const body = JSON.stringify({
+    email,
+  });
+
+  try {
+    const res = await axios.post('/api/auth/reset-password', body, config);
+
+    dispatch({
+      type: RESET_SUCCESS,
+      payload: res.data,
+    });
+  } catch (err) {
+    const { errors } = err.response.data;
+    console.log('The RESET  error is here: ', errors);
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+    dispatch({
+      type: RESET_FAIL,
+
+    });
+  }
+};
+
 //  lOGOUT / ClearProfile
 
 const logout = () => (dispatch) => {
@@ -118,5 +155,5 @@ const logout = () => (dispatch) => {
 };
 
 export {
-  register, loadUser, login, logout,
+  register, loadUser, login, logout, resetPswd,
 };

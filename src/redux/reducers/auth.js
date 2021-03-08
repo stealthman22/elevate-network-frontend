@@ -6,6 +6,8 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOG_OUT,
+  RESET_SUCCESS,
+  RESET_FAIL,
   ACCOUNT_DELETED,
 } from '../actions/types';
 
@@ -38,10 +40,19 @@ export default function registerFunc(state = initialState, action) {
         loading: false,
       };
 
+    case RESET_SUCCESS:
+      return {
+        ...state,
+        ...payload,
+        isAuthenticated: false,
+        loading: false,
+      };
+
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOG_OUT:
+    case RESET_FAIL:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');
       return {

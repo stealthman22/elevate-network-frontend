@@ -80,6 +80,12 @@ const Login = ({ login, isAuthenticated }) => {
               <br />
               <Link to="/register">Sign Up </Link>
             </p>
+
+            <p className="py-1 text-center">
+              <span>Forgot Password?</span>
+              <br />
+              <Link to="/forgotPassword"> Click to Reset </Link>
+            </p>
           </div>
         </div>
       </div>
