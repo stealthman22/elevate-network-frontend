@@ -96,6 +96,7 @@ const login = ({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+
     // So user is loaded immediately
     dispatch(loadUser());
   } catch (err) {
@@ -128,10 +129,11 @@ const resetPswd = ({
 
   try {
     const res = await axios.post('/api/auth/reset-password', body, config);
-
+    dispatch(setAlert('Check Your Mail', 'success'));
     dispatch({
       type: RESET_SUCCESS,
       payload: res.data,
+
     });
   } catch (err) {
     const { errors } = err.response.data;

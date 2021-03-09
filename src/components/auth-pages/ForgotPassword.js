@@ -29,18 +29,21 @@ const ForgotPassword = ({ resetPswd, isAuthenticated }) => {
     resetPswd({ email });
   };
   //  redirect to dashboard if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <>
       <div className=" auth-wrapper ">
 
         <div className="auth-ctn">
-          <h1 className="medium text-primary text-center">LOG IN</h1>
+          <h1 className="medium text-primary text-center">Forgot Password</h1>
           <div className="left" />
           <div className="right">
             <p className="lead text-center">
               <i className="fas fa-user" />
               {' '}
-              <span>Reset Your Account</span>
+              <span>Reset Your Password</span>
             </p>
 
             <form className="form " onSubmit={(e) => onSubmit(e)}>
@@ -57,7 +60,7 @@ const ForgotPassword = ({ resetPswd, isAuthenticated }) => {
               <input
                 type="submit"
                 className="btn btn-primary ml"
-                value="Log in"
+                value="Reset"
               />
             </form>
             <p className="py-1 text-center">

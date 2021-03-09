@@ -8,6 +8,7 @@ import {
   LOG_OUT,
   RESET_SUCCESS,
   RESET_FAIL,
+  CLEAR_PROFILE,
   ACCOUNT_DELETED,
 } from '../actions/types';
 
@@ -46,12 +47,14 @@ export default function registerFunc(state = initialState, action) {
         ...payload,
         isAuthenticated: false,
         loading: false,
+
       };
 
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOG_OUT:
+    case CLEAR_PROFILE:
     case RESET_FAIL:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');
