@@ -10,6 +10,8 @@ import {
   RESET_FAIL,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
+  NEW_PASSWORD_SUCCESS,
+  NEW_PASSWORD_FAIL,
 } from '../actions/types';
 
 // initial state is the value of token in local storage
@@ -42,9 +44,19 @@ export default function registerFunc(state = initialState, action) {
       };
 
     case RESET_SUCCESS:
+    case NEW_PASSWORD_SUCCESS:
       return {
         ...state,
         ...payload,
+        isAuthenticated: false,
+        loading: false,
+
+      };
+
+    case RESET_FAIL:
+    case NEW_PASSWORD_FAIL:
+      return {
+        ...state,
         isAuthenticated: false,
         loading: false,
 
@@ -55,7 +67,6 @@ export default function registerFunc(state = initialState, action) {
     case LOGIN_FAIL:
     case LOG_OUT:
     case CLEAR_PROFILE:
-    case RESET_FAIL:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');
       return {

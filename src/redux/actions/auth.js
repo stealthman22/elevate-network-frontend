@@ -12,6 +12,8 @@ import {
   CLEAR_PROFILE,
   RESET_SUCCESS,
   RESET_FAIL,
+  NEW_PASSWORD_FAIL,
+  NEW_PASSWORD_SUCCESS,
 } from './types';
 
 // Global header
@@ -149,6 +151,47 @@ const resetPswd = ({
   }
 };
 
+// NEW PASSWORD
+const newPswd = ({
+  password, token, history,
+}) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+
+  };
+  const body = JSON.stringify({
+    password,
+    token,
+    history,
+  });
+  console.log(body.token);
+
+  try {
+    const res = await axios.post('/api/auth/new-password', body, config);
+    dispatch({
+      type: NEW_PASSWORD_SUCCESS,
+      payload: res.data,
+
+    });
+
+    dispatch(setAlert('Password Successfully Updated', 'success'));
+    history.push('/reset-password/:token');
+  } catch (err) {
+    const { errors } = err.response.data;
+    console.log('The new password error is here: ', errors);
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+    dispatch({
+      type: NEW_PASSWORD_FAIL,
+
+    });
+  }
+};
+
 //  lOGOUT / ClearProfile
 
 const logout = () => (dispatch) => {
@@ -157,5 +200,5 @@ const logout = () => (dispatch) => {
 };
 
 export {
-  register, loadUser, login, logout, resetPswd,
+  register, loadUser, login, logout, resetPswd, newPswd,
 };

@@ -65,7 +65,6 @@ const ForgotPassword = ({ resetPswd, isAuthenticated }) => {
             </form>
             <p className="py-1 text-center">
               <span>Don&apos;t have an account?</span>
-              <br />
               <Link to="/register">Sign Up </Link>
             </p>
           </div>

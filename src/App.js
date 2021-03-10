@@ -13,7 +13,8 @@ import Programs from './components/Programs';
 import Faq from './components/Faq';
 import Register from './components/auth-pages/Register';
 import Login from './components/auth-pages/Login';
-import ForgotPswd from './components/auth-pages/ForgotPassword';
+import ForgotPassword from './components/auth-pages/ForgotPassword';
+import NewPassword from './components/auth-pages/NewPassword';
 import Alert from './components/elements/Alert';
 import Dashboard from './components/private-pages/Dashboard';
 import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
@@ -61,7 +62,8 @@ const App = () => {
             <Route exact path="/faq" component={Faq} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/forgotPassword" component={ForgotPswd} />
+            <Route exact path="/forgot-password" component={ForgotPassword} />
+            <Route exact path="/reset-password/:token" component={NewPassword} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/partner-profiles" component={PartnerProfiles} />
             <PrivateRoute exact path="/mentor-profiles" component={MentorProfiles} />

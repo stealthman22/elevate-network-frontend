@@ -27,13 +27,13 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 'off',
     // PROP SHADOW ERROR IN ESLINT
-    'no-shadow': 'warn',
+    'no-shadow': 'off',
     // Disable Prefer destructuring on arrays
     // 'prefer-destructuring': ['error', { object: false, array: false }],
 
     // remove max line error
     // 'max-len': ['error', { code: 140 }],
-    'max-len': 'warn',
+    'max-len': 'off',
     //  allow restricted syntax
     // other values are "LabeledStatement", "WithStatement", ForOfStatement
     // line 33 handleMenteeProfile
@@ -52,10 +52,10 @@ module.exports = {
     // index as key of array
     'react/no-array-index-key': 'off',
     // unused varaibles needed for testing
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     // inner props declarations can get confusing
-    'react/prop-types': 'warn',
+    'react/prop-types': 'off',
     'jsx-a11y/control-has-associated-label': 'off',
-    'global-require': 'warn',
+    'global-require': 'off',
   },
 };
