@@ -30,9 +30,7 @@ const NewPassword = ({ newPswd, isAuthenticated }) => {
     newPswd({ password, token });
   };
   //  redirect to dashboard if logged in
-  if (isAuthenticated) {
-    return <Redirect to="/login" />;
-  }
+
   return (
     <>
       <div className=" auth-wrapper ">

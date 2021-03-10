@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 import setAlert from './alert';
 import {
@@ -176,6 +177,7 @@ const newPswd = ({
     });
 
     dispatch(setAlert('Password Successfully Updated', 'success'));
+    <Redirect to="/login" />;
   } catch (err) {
     const { errors } = err.response.data;
     console.log('The new password error is here: ', errors);
