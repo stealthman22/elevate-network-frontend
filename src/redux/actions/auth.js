@@ -153,7 +153,7 @@ const resetPswd = ({
 
 // NEW PASSWORD
 const newPswd = ({
-  password, token, history,
+  password, token,
 }) => async (dispatch) => {
   const config = {
     headers: {
@@ -164,7 +164,6 @@ const newPswd = ({
   const body = JSON.stringify({
     password,
     token,
-    history,
   });
   console.log(body.token);
 
@@ -177,7 +176,6 @@ const newPswd = ({
     });
 
     dispatch(setAlert('Password Successfully Updated', 'success'));
-    history.push('/reset-password/:token');
   } catch (err) {
     const { errors } = err.response.data;
     console.log('The new password error is here: ', errors);
