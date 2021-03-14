@@ -11,7 +11,6 @@ const Alert = ({ alerts }) => alerts !== null
    <div className={`alert alert-${alert.alertType}`}>
      <div
        key={alert.id}
-
      >
        {alert.msg}
      </div>
