@@ -20,7 +20,7 @@ import Dashboard from './components/private-pages/Dashboard';
 import CreateMenteeProfile from './components/private-pages/profile-forms/CreateMenteeProfile';
 import CreateMentorProfile from './components/private-pages/profile-forms/CreateMentorProfile';
 import CreatePartnerProfile from './components/private-pages/profile-forms/CreatePartnerProfile';
-import EditMenteeProfile from './components/private-pages/profile-forms/EditMenteeProfile';
+import EditProfile from './components/private-pages/profile-forms/EditProfile';
 import AddExp from './components/private-pages/profile-forms/AddExp';
 import AddEdu from './components/private-pages/profile-forms/AddEdu';
 // import MenteeProfile from './components/private-pages/profile-forms/handleMenteeProfile';
@@ -31,6 +31,7 @@ import MenteeProfiles from './components/private-pages/profiles/MenteeProfiles';
 import MenteeProfile from './components/private-pages/profile/MenteeProfile';
 import MentorProfile from './components/private-pages/profile/MentorProfile';
 import PartnerProfile from './components/private-pages/profile/PartnerProfile';
+import PicUpload from './components/private-pages/profile-forms/PicUpload';
 import './App.css';
 
 // For Redux
@@ -74,9 +75,10 @@ const App = () => {
             <PrivateRoute exact path="/create-mentee-profile" component={CreateMenteeProfile} />
             <PrivateRoute exact path="/create-mentor-profile" component={CreateMentorProfile} />
             <PrivateRoute exact path="/create-partner-profile" component={CreatePartnerProfile} />
-            <PrivateRoute exact path="/edit-profile" component={EditMenteeProfile} />
+            <PrivateRoute exact path="/edit-profile" component={EditProfile} />
             <PrivateRoute exact path="/add-experience" component={AddExp} />
             <PrivateRoute exact path="/add-education" component={AddEdu} />
+            <PrivateRoute exact path="/pic-upload" component={PicUpload} />
 
           </Switch>
         </>

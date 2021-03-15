@@ -1,0 +1,15 @@
+.container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+height: 100vh;
+flex-direction: column;
+}
+
+button{
+ cursor: pointer;
+ background-color: green;
+ color: #fff;
+ padding: 0.3rem;
+ border-radius: 10px;
+}
