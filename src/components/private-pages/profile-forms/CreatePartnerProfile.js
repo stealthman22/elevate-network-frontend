@@ -18,9 +18,11 @@ const CreateMenteeProfile = ({ handleProfile, history }) => {
     twitter: '',
     instagram: '',
     linkedin: '',
+    profilePic: '',
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+  const [url, setUrl] = useState('');
 
   const {
     fullName,
@@ -35,6 +37,7 @@ const CreateMenteeProfile = ({ handleProfile, history }) => {
     twitter,
     instagram,
     linkedin,
+    profilePic,
   } = formData;
 
   const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
@@ -44,6 +47,24 @@ const CreateMenteeProfile = ({ handleProfile, history }) => {
     handleProfile(formData, history);
   };
 
+  const picDetails = () => {
+    const data = new FormData();
+    data.append('file', url);
+    data.append('upload_preset', 'elevate-site-profile-pic');
+    data.append('cloud_name', 'elevatenetworkhq-com');
+    fetch('https://api.cloudinary.com/v1_1/elevatenetworkhq-com/image/upload/', {
+      method: 'post',
+      body: data,
+
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUrl(data.url);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
 
     <>
@@ -104,6 +125,17 @@ const CreateMenteeProfile = ({ handleProfile, history }) => {
           />
         </div>
 
+        <div className="form-group">
+          <small>upload your profile photo</small>
+          <br />
+          <input
+            type="file"
+            name="Upload photo"
+            value={profilePic}
+            onChange={(e) => setUrl(e.target.files[0])}
+          />
+          <button className="styles.btn" type="button" onClick={() => picDetails()}>Upload</button>
+        </div>
         <div className="my-2">
           <button onClick={() => toggleSocialInputs(!displaySocialInputs)} type="button" className="btn btn-light">
             Add Social Network Links

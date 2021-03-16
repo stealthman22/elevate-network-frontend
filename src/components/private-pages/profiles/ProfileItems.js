@@ -8,12 +8,12 @@ const ProfileItems = ({
   profile: {
     user: {
       _id, username,
-      role, avatar,
+      role,
     },
     bio: {
       aboutMe,
       location,
-
+      profilePic,
     },
     interests: {
       skills,
@@ -23,7 +23,7 @@ const ProfileItems = ({
 }) => (
   <>
     <div className="profile bg-light m-1">
-      {/* <img src={avatar} alt="" className="round-img" /> */}
+      <img className="round-img my-1" alt="" src={profilePic} />
       <div>
         <h2>
           {role}

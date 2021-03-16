@@ -27,6 +27,7 @@ const EditMenteeProfile = ({
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+  const [url, setUrl] = useState('');
 
   useEffect(() => {
     getCurrentProfile();
@@ -39,7 +40,7 @@ const EditMenteeProfile = ({
         aboutMe: loading || !profile.bio.aboutMe ? '' : profile.bio.aboutMe,
         location: loading || !profile.bio.location ? '' : profile.bio.location,
         dob: loading || !profile.bio.dob ? '' : profile.bio.dob,
-        // profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
+        profilePic: loading || !profile.profilePic ? '' : profile.profilePic,
         skills: loading || !profile.interests.skills ? '' : profile.interests.skills.join(','),
         learningInterests: loading || !profile.interests.learningInterests ? '' : profile.interests.learningInterests.join(','),
         youtube: loading || !profile.social ? '' : profile.social.youtube,
@@ -64,6 +65,7 @@ const EditMenteeProfile = ({
     twitter,
     instagram,
     linkedin,
+    profilePic,
   } = formData;
 
   const onChange = (e) => setformData({ ...formData, [e.target.name]: e.target.value });
@@ -71,6 +73,25 @@ const EditMenteeProfile = ({
   const onSubmit = (e) => {
     e.preventDefault();
     handleProfile(formData, history);
+  };
+
+  const picDetails = () => {
+    const data = new FormData();
+    data.append('file', url);
+    data.append('upload_preset', 'elevate-site-profile-pic');
+    data.append('cloud_name', 'elevatenetworkhq-com');
+    fetch('https://api.cloudinary.com/v1_1/elevatenetworkhq-com/image/upload/', {
+      method: 'post',
+      body: data,
+
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUrl(data.url);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -134,6 +155,17 @@ const EditMenteeProfile = ({
             value={learningInterests}
             onChange={(e) => onChange(e)}
           />
+        </div>
+
+        {/* profile picture */}
+        <div className="form-group">
+          <small>upload your profile photo</small>
+          <input
+            type="file"
+            name="Upload Photo"
+            onChange={(e) => setUrl(e.target.files[0])}
+          />
+          <button className="styles.btn" type="button" onClick={() => picDetails()}>Upload</button>
         </div>
 
         <div className="my-2">

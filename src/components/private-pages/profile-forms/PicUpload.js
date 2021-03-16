@@ -4,20 +4,21 @@ import axios from 'axios';
 import styles from '../../elements/styles/picUpload.module.css';
 
 const PicUpload = (props) => {
-  const [image, setImage] = useState('');
+  const [url, setUrl] = useState('');
 
   const picDetails = () => {
     const data = new FormData();
-    data.append('file', image);
+    data.append('file', url);
     data.append('upload_preset', 'elevate-site-profile-pic');
     data.append('cloud_name', 'elevatenetworkhq-com');
-
-    axios.post('https://api.cloudinary.com/v1_1/elevatenetworkhq-com/image/upload/', {
+    fetch('https://api.cloudinary.com/v1_1/elevatenetworkhq-com/image/upload/', {
+      method: 'post',
       body: data,
+
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setUrl(data.url);
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +46,7 @@ const PicUpload = (props) => {
     <>
       <div className={styles.container}>
         <h2>upload your pic</h2>
-        <input type="file" name="Upload photo" onChange={(e) => console.log(e.target.files)} />
+        <input type="file" name="Upload photo" onChange={(e) => setUrl(e.target.files[0])} />
         <button className="styles.btn" type="button" onClick={() => picDetails()}>Upload</button>
       </div>
 
